@@ -8,8 +8,34 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
   </head>
   <body>
-    <h1>Welcome to my pages...</h1>
+    <div class="header-line"></div>
+    <div class="container">
+      <div class="header">
+        <a class="nav-logo" href="/">
+          <span>Adam Joyce</span><br>
+          <span
+          class="nav-profession typewrite"
+          data-text=
+          '["Software Engineer", "Full-Stack Developer", "Human Male"]'
+          data-delay="1000">
+          </span>
+        </a>
+        <nav class="nav-bar">
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
   </body>
 </html>
