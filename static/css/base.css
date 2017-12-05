@@ -22,13 +22,20 @@ body {
 }
 
 .header {
-  margin-top: 3em;
+  float: left;
+  margin: 3em 0;
+  width: 100%;
+}
+
+.typewrite {
+  border-right: 0.08em solid #ee2b47;
+}
+
+.space-right {
+  padding-right: 0.5em;
 }
 
 /* Navigation Bar */
-.nav-bar {
-}
-
 .nav-logo {
   float: left;
   font-size: 1.25em;
@@ -39,20 +46,44 @@ body {
   color: #ee2b47;
 }
 
+.nav-bar {
+  float: right;
+}
+
 .nav-list {
   list-style-type: none;
   margin: 0;
 }
 
 .nav-item {
-  float: right;
+  float: left;
+}
+
+.nav-item a.nav-link:hover span {
+  color: #ee2b47;
+}
+
+.nav-item a.nav-link:hover i {
+  color: #ee2b47;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-name: bounce;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 .nav-link {
   display: block;
   font-size: 1.25em;
   padding: 0.625em 2em;
-  text-align: center;
   text-decoration: none;
 }
 
