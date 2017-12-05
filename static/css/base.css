@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #2c2e3e;
+  background: #34374c;
   margin: 0;
 }
 
@@ -46,13 +46,31 @@ body {
   color: #ee2b47;
 }
 
+#nav-icon {
+  background: #34374c;
+  border: none;
+  cursor: pointer;
+  display: none;
+  float: right;
+  font-size: 2em;
+  padding: 0em 0.3em;
+  padding-bottom: 0.1em;
+  text-decoration: none;
+}
+
 .nav-bar {
   float: right;
 }
 
+.nav.collapse {
+  display: block;
+}
+
 .nav-list {
+  float: right;
   list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -65,9 +83,18 @@ body {
 
 .nav-item a.nav-link:hover i {
   color: #ee2b47;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-  animation-name: bounce;
+  -webkit-animation: 0.4s ease-in-out bounce;
+          animation: 0.4s ease-in-out bounce;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 @keyframes bounce {
@@ -87,9 +114,90 @@ body {
   text-decoration: none;
 }
 
+/* Overlay. */
+.overlay {
+  background: rgb(44,46,62);
+  background: rgba(44,46,62, 0.9);
+  display: none;
+  height: 0;
+  left: 0;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+
+.overlay-content {
+  margin-top: 2em;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 100%;
+}
+
+.overlay-link {
+  display: block;
+  font-size: 1.25em;
+  padding: 0.625em 2em;
+  text-decoration: none;
+}
+
+.overlay a.overlay-link:hover span {
+  color: #ee2b47;
+}
+
+.overlay a.overlay-link:hover i {
+  color: #ee2b47;
+  -webkit-animation: 0.4s ease-in-out bounce;
+          animation: 0.4s ease-in-out bounce;
+}
+
+.overlay #close-overlay {
+  border: none;
+  background: rgb(44,46,62);
+  background: rgba(44,46,62, 0.9);
+  font-size: 2.5em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+
 /* Media Queries */
 @media (min-width: 1200px) {
   .container {
     width: 1200px;
+  }
+}
+
+@media (max-width: 780px) {
+  .nav-bar {
+    float: none;
+    clear: both;
+  }
+
+  .nav-list {
+    float: none;
+    text-align: center;
+  }
+
+  .nav-item {
+    display: inline-block;
+    float: none;
+  }
+}
+
+@media (max-width: 536px) {
+  #nav-icon {
+    display: inline-block;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .overlay {
+    display: inline-block;
   }
 }

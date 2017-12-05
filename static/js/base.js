@@ -51,6 +51,18 @@ TypeWriter.prototype.tick = function() {
 };
 /* End of TypeWriter. */
 
+/* Overlay navigation functionality for small screens. */
+// Open overlay.
+var overlay = document.getElementById('nav-overlay');
+document.getElementById('nav-icon').addEventListener('click', function(e) {
+  overlay.style.height = '100%';
+});
+
+// Close Overlay.
+document.getElementById('close-overlay').addEventListener('click', function(e) {
+  overlay.style.height = '0%';
+});
+
 // Executes once the window has loaded.
 window.onload = function() {
   // TypeWriter.
