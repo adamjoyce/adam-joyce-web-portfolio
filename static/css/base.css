@@ -9,8 +9,12 @@ body {
   margin: 0;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* Global Classes */
-.container {
+.page-container {
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -23,7 +27,7 @@ body {
 
 .header {
   float: left;
-  margin: 3em 0;
+  margin: 1.5em 0;
   width: 100%;
 }
 
@@ -33,6 +37,23 @@ body {
 
 .space-right {
   padding-right: 0.5em;
+}
+
+.emphasis {
+  color: #ee2b47;
+}
+
+/* Global Id's */
+#welcome-page {
+  bottom: 0;
+  font-size: 1.25em;
+  position: fixed;
+  width: 100%;
+}
+
+#welcome-page h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
 /* Navigation Bar */
@@ -172,23 +193,6 @@ body {
 }
 
 @media (max-width: 780px) {
-  .nav-bar {
-    float: none;
-    clear: both;
-  }
-
-  .nav-list {
-    float: none;
-    text-align: center;
-  }
-
-  .nav-item {
-    display: inline-block;
-    float: none;
-  }
-}
-
-@media (max-width: 536px) {
   #nav-icon {
     display: inline-block;
   }
@@ -200,4 +204,22 @@ body {
   .overlay {
     display: inline-block;
   }
+
+  #welcome-page h1 {
+    font-size: 2.5em;
+  }
 }
+
+/*@media (max-width: 536px) {
+  #nav-icon {
+    display: inline-block;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .overlay {
+    display: inline-block;
+  }
+}*/
