@@ -44,18 +44,40 @@ button:focus {
   color: #ee2b47;
 }
 
+.default-button {
+  background: #ee2b47;
+  /*background: linear-gradient(to right bottom, #ee2b47 50%, #cc243d 50%);*/
+  border-bottom: 2px solid #b52036;#cc243d;
+  border-left: 2px solid #ee2b47;
+  border-right: 2px solid #b52036;#cc243d;
+  border-top: 2px solid #ee2b47;
+  border-radius: 0.25em;
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.default-button:active {
+  border-bottom: 2px solid #ee2b47;
+  border-left: 2px solid #b52036;#cc243d;
+  border-right: 2px solid #ee2b47;
+  border-top: 2px solid #b52036;#cc243d;
+}
+
 /* Global Id's */
 #welcome-page {
   bottom: 0;
   float: left;
   font-size: 1.25em;
-  margin: 2em 0;
-  width: 100%;
+  margin: 2.5em 0;
 }
 
 #welcome-page h1 {
   font-size: 3em;
   margin: 0;
+}
+
+#welcome-page p {
+  margin-top: 0.8em;
 }
 
 /* Navigation Bar */
@@ -206,22 +228,10 @@ button:focus {
   .overlay {
     display: inline-block;
   }
-
-  #welcome-page h1 {
-    font-size: 2.5em;
-  }
 }
 
-/*@media (max-width: 536px) {
-  #nav-icon {
-    display: inline-block;
+@media (max-width: 536px) {
+  #welcome-page h1 {
+    font-size: 2.25em;
   }
-
-  .nav-bar {
-    display: none;
-  }
-
-  .overlay {
-    display: inline-block;
-  }
-}*/
+}
