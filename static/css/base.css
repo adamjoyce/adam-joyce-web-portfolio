@@ -15,6 +15,7 @@ button:focus {
 
 /* Global Classes */
 .page-container {
+  display: block;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -46,8 +47,9 @@ button:focus {
 /* Global Id's */
 #welcome-page {
   bottom: 0;
+  float: left;
   font-size: 1.25em;
-  position: fixed;
+  margin: 2em 0;
   width: 100%;
 }
 
@@ -187,7 +189,7 @@ button:focus {
 
 /* Media Queries */
 @media (min-width: 1200px) {
-  .container {
+  .page-container {
     width: 1200px;
   }
 }
