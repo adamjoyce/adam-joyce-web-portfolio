@@ -165,7 +165,7 @@ button:focus {
   text-decoration: none;
 }
 
-/* Overlay. */
+/* Nav Overlay. */
 .overlay {
   background: rgb(44,46,62);
   background: rgba(44,46,62, 0.9);
@@ -215,7 +215,43 @@ button:focus {
   right: 0.5em;
 }
 
-/* Media Queries */
+/* Content Fade-In. */
+#fade-container {
+  float: left;
+  width: 100%;
+}
+
+.fade {
+  -webkit-animation: 1.0s linear fade;
+          animation: 1.0s linear fade;
+}
+
+.reverse-fade {
+  -webkit-animation: 1.0s linear reverse fade;
+          animation: 1.0s linear reverse fade;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Media Queries. */
 @media (min-width: 1200px) {
   .page-container {
     width: 1200px;

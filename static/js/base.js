@@ -63,6 +63,13 @@ document.getElementById('close-overlay').addEventListener('click', function(e) {
   overlay.style.height = '0%';
 });
 
+// Page fade out before loading new page.
+document.getElementById('test').addEventListener('click', function() {
+  var fadeClasses = document.getElementById('fade-container').classList;
+  fadeClasses.remove('fade');
+  setTimeout(function () { fadeClasses.add('reverse-fade'); }, 10);
+});
+
 // Executes once the window has loaded.
 window.onload = function() {
   // TypeWriter.
