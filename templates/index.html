@@ -1,108 +1,22 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Adam Joyce Web Developer</title>
+{% block page_content %}
+<!-- Title Page Information -->
+<section id="welcome-page">
+  <h1>Hi,</h1>
+  <h1>I'm <span class="emphasis">Adam</span>,</h1>
+  <h1>Full Stack <span class="emphasis">Web Developer</span>.</h1>
+  <hr>
+  <p><span class="emphasis">Resposive</span> Front-End Design |
+  <span class="emphasis">Efficient</span> Back-End Development |
+  <span class="emphasis">Adaptable</span> Programmer</p>
+  <button class="default-button" type="button" name="button">
+    Build My Website
+  </button>
+</section>
+{% endblock %}
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="header-line"></div>
-    <div class="page-container">
-      <header class="header">
-        <!-- Brand -->
-        <a class="nav-logo" href="/">
-          <span>Adam Joyce</span><br>
-          <span
-          class="nav-profession typewrite"
-          data-text=
-          '["Software Engineer", "Full-Stack Developer",
-            "Board Game Enthusiast", "Novice Guitar Plucker", "Human Male"]'
-          data-delay="1000">
-          </span>
-        </a>
-        <button id="nav-icon" type="button">&#9776;</button>
-
-        <!-- Navbar -->
-        <nav class="nav-bar">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="space-right">
-                  <i class="fa fa-code" aria-hidden="true"></i>
-                </span>
-                <span>Projects</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="space-right">
-                  <i class="fa fa-rss" aria-hidden="true"></i>
-                </span>
-                <span>Blog</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="space-right">
-                  <i class="fa fa-male" aria-hidden="true"></i>
-                </span>
-                <span>About</span>
-              </a>
-            </li>
-          </ul>
-          <a href="#"></a>
-        </nav>
-
-        <!-- Navigation Overlay for Small Screens -->
-        <div id="nav-overlay" class="overlay">
-          <button id="close-overlay" type="button">&times;</button>
-          <div class="overlay-content">
-            <a class="overlay-link" href="#">
-              <span class="space-right">
-                <i class="fa fa-code" aria-hidden="true"></i>
-              </span>
-              <span>Projects</span>
-            </a>
-            <a class="overlay-link" href="#">
-              <span class="space-right">
-                <i class="fa fa-rss" aria-hidden="true"></i>
-              </span>
-              <span>Blog</span>
-            </a>
-            <a class="overlay-link" href="#">
-              <span class="space-right">
-                <i class="fa fa-male" aria-hidden="true"></i>
-              </span>
-              <span>About</span>
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <!-- Title Page Information -->
-      <section id="welcome-page">
-        <h1>Hi,</h1>
-        <h1>I'm <span class="emphasis">Adam</span>,</h1>
-        <h1>Full Stack <span class="emphasis">Web Developer</span>.</h1>
-        <hr>
-        <p><span class="emphasis">Resposive</span> Front-End Design |
-        <span class="emphasis">Efficient</span> Back-End Development |
-        <span class="emphasis">Adaptable</span> Programmer</p>
-        <button class="default-button" type="button" name="button">
-          Build My Website
-        </button>
-      </section>
-    </div>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
-  </body>
-</html>
+{% block page_footer %}
+{% endblock %}

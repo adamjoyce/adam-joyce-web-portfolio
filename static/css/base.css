@@ -46,10 +46,9 @@ button:focus {
 
 .default-button {
   background: #ee2b47;
-  /*background: linear-gradient(to right bottom, #ee2b47 50%, #cc243d 50%);*/
-  border-bottom: 2px solid #b52036;#cc243d;
+  border-bottom: 2px solid #b52036;
   border-left: 2px solid #ee2b47;
-  border-right: 2px solid #b52036;#cc243d;
+  border-right: 2px solid #b52036;
   border-top: 2px solid #ee2b47;
   border-radius: 0.25em;
   font-size: 1em;
@@ -58,9 +57,9 @@ button:focus {
 
 .default-button:active {
   border-bottom: 2px solid #ee2b47;
-  border-left: 2px solid #b52036;#cc243d;
+  border-left: 2px solid #b52036;
   border-right: 2px solid #ee2b47;
-  border-top: 2px solid #b52036;#cc243d;
+  border-top: 2px solid #b52036;
 }
 
 /* Global Id's */
@@ -78,6 +77,13 @@ button:focus {
 
 #welcome-page p {
   margin-top: 0.8em;
+}
+
+#page-footer {
+  background: #2c2e3e;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 /* Navigation Bar */
@@ -228,6 +234,10 @@ button:focus {
   .overlay {
     display: inline-block;
   }
+
+  /*#welcome-page h1 {
+    font-size: 2.25em;
+  }*/
 }
 
 @media (max-width: 536px) {
