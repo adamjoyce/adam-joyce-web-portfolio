@@ -64,11 +64,20 @@ document.getElementById('close-overlay').addEventListener('click', function(e) {
 });
 
 // Page fade out before loading new page.
-document.getElementById('test').addEventListener('click', function() {
-  var fadeClasses = document.getElementById('fade-container').classList;
-  fadeClasses.remove('fade');
-  setTimeout(function () { fadeClasses.add('reverse-fade'); }, 10);
-});
+var pageLinks = document.getElementsByClassName('page-swap');
+for (var i = 0; i < pageLinks.length; ++i) {
+  pageLinks[i].addEventListener('click', function() {
+    // Add the class to play the fade out animation.
+    var linkClassList = document.getElementById('fade-container').classList;
+    linkClassList.remove('fade');
+    setTimeout(function () { linkClassList.add('reverse-fade'); }, 10);
+  });
+
+  // Switch the webpage after animation completes.
+  pageLinks[i].addEventListener('animationend', function() {
+    document.location.href = pageLinks[i].dataset.url;
+  });
+}
 
 // Executes once the window has loaded.
 window.onload = function() {

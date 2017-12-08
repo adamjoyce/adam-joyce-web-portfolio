@@ -215,20 +215,20 @@ button:focus {
   right: 0.5em;
 }
 
-/* Content Fade-In. */
+/* Content Fade In / Out. */
 #fade-container {
   float: left;
   width: 100%;
 }
 
 .fade {
-  -webkit-animation: 1.0s linear fade;
-          animation: 1.0s linear fade;
+  -webkit-animation: 1.0s linear forwards fade;
+          animation: 1.0s linear forwards fade;
 }
 
 .reverse-fade {
-  -webkit-animation: 1.0s linear reverse fade;
-          animation: 1.0s linear reverse fade;
+  -webkit-animation: 1.0s linear reverse forwards fade;
+          animation: 1.0s linear reverse forwards fade;
 }
 
 @-webkit-keyframes fade {
@@ -250,6 +250,9 @@ button:focus {
     opacity: 1;
   }
 }
+
+/* Used to mark links that navigate to seperte web pages. */
+.page-swap {}
 
 /* Media Queries. */
 @media (min-width: 1200px) {
