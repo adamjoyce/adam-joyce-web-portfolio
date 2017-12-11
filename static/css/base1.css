@@ -12,6 +12,19 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  color: #f6f6f6;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
 #page-container {
   margin: 0 auto;
   padding: 0 1rem;
@@ -48,7 +61,10 @@ a {
 }
 
 #nav-icon {
+  background: #34374c;
   display: none;
+  float: right;
+  font-size: 2em;
 }
 
 .nav-bar {
@@ -61,14 +77,86 @@ a {
 }
 
 .nav-link {
-  padding: 0 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.nav-link:hover {
+  color: #ee2b47;
+}
+
+.nav-link i {
+  padding-right: 0.2rem;
+}
+
+.nav-link:hover i {
+  -webkit-animation: 0.4s ease-in-out bounce;
+          animation: 0.4s ease-in-out bounce;
+}
+
+/* Overlay */
+.overlay {
+  background: rgb(44,46,62);
+  background: rgba(44,46,62, 0.9);
+  display: none;
+  height: 0;
+  left: 0;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+
+#close-overlay {
+  background: rgb(44,46,62);
+  background: rgba(44,46,62, 0.9);
+  font-size: 2em;
+  position: absolute;
+  top: 1.125rem;
+  right: 1rem;
 }
 /*** End of Header ***/
 
+/*** Animations ***/
+@-webkit-keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
 /*** Media Queries ***/
-@media (min-width: 75rem) {
+@media (max-width: 680px) {
+  #nav-icon {
+    display: inline;
+  }
+
+  #nav-bar-default .nav-bar {
+    display: none;
+  }
+
+  .overlay {
+    display: inline;
+  }
+}
+
+@media (min-width: 1200px) {
   #page-container {
-    width: 75rem;
+    width: 1200px;
   }
 }
 /*** End of Media Queries ***/
