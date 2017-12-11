@@ -51,33 +51,33 @@ TypeWriter.prototype.tick = function() {
 };
 /* End of TypeWriter. */
 
-/* Overlay navigation functionality for small screens. */
-// Open overlay.
-var overlay = document.getElementById('nav-overlay');
-document.getElementById('nav-icon').addEventListener('click', function(e) {
-  overlay.style.height = '100%';
-});
-
-// Close Overlay.
-document.getElementById('close-overlay').addEventListener('click', function(e) {
-  overlay.style.height = '0%';
-});
-
-// Page fade out before loading new page.
-var pageLinks = document.getElementsByClassName('page-swap');
-for (var i = 0; i < pageLinks.length; ++i) {
-  pageLinks[i].addEventListener('click', function() {
-    // Add the class to play the fade out animation.
-    var linkClassList = document.getElementById('fade-container').classList;
-    linkClassList.remove('fade');
-    setTimeout(function () { linkClassList.add('reverse-fade'); }, 10);
-  });
-
-  // Switch the webpage after animation completes.
-  pageLinks[i].addEventListener('animationend', function() {
-    document.location.href = pageLinks[i].dataset.url;
-  });
-}
+// /* Overlay navigation functionality for small screens. */
+// // Open overlay.
+// var overlay = document.getElementById('nav-overlay');
+// document.getElementById('nav-icon').addEventListener('click', function(e) {
+//   overlay.style.height = '100%';
+// });
+//
+// // Close Overlay.
+// document.getElementById('close-overlay').addEventListener('click', function(e) {
+//   overlay.style.height = '0%';
+// });
+//
+// // Page fade out before loading new page.
+// var pageLinks = document.getElementsByClassName('page-swap');
+// for (var i = 0; i < pageLinks.length; ++i) {
+//   pageLinks[i].addEventListener('click', function() {
+//     // Add the class to play the fade out animation.
+//     var linkClassList = document.getElementById('fade-container').classList;
+//     linkClassList.remove('fade');
+//     setTimeout(function () { linkClassList.add('reverse-fade'); }, 10);
+//   });
+//
+//   // Switch the webpage after animation completes.
+//   pageLinks[i].addEventListener('animationend', function() {
+//     document.location.href = pageLinks[i].dataset.url;
+//   });
+// }
 
 // Executes once the window has loaded.
 window.onload = function() {
