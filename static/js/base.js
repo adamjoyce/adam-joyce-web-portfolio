@@ -1,3 +1,8 @@
+/* Calculate height for the landing page dependent on viewport height. */
+var headerHeight = document.getElementById('header-container').offsetHeight;
+var landingContentHeight = (window.innerHeight - (headerHeight + 2)) + 'px';
+document.getElementById('landing-page').style.height = landingContentHeight;
+
 /* Typewriter. */
 var TypeWriter = function(element, textPool, waitTime) {
   this.element = element;
