@@ -1,13 +1,16 @@
-var TypeWriter = {
-  settings: {
-    scrollDelayLower: 100,
-    scrollDelayUpper: 200,
-    defaultPeriodDelay: 2000
-  },
-
-  init: function() {
-  },
-};
+/* Typewriter module used for animating the pattern of typing on a keyboard
+ * followed by erasing what was typed.
+ */
+var TypeWriter = function(element, textPool, periodDelay) {
+  this.element = element;
+  this.textPool = textPool;
+  this.periodDelay = parseInt(periodDelay, 10) || 2000;
+  this.scrollDelayLower = 100;
+  this.scrollDelayUpper = 200;
+  this.text = '';
+  this.count = 0;
+  this.isErasing = false;
+}
 
 TypeWriter.prototype.tick = function() {
   // this.count tracks the current index for the textPool.
@@ -29,8 +32,8 @@ TypeWriter.prototype.tick = function() {
 
   // How long the pause is before the next tick when writing or erasing.
   // Simulates variance in typing speed.
-  var scrollDelay = this.settings.scrollDelayUpper - Math.random() *
-                    this.settings.scrollDelayLower;
+  var scrollDelay = this.scrollDelayUpper - Math.random() *
+                    this.scrollDelayLower;
 
   // Erasing is twice as fast as writing.
   if (this.isErasing) { scrollDelay *= 0.5; }
