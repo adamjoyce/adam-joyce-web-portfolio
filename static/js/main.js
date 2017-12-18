@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
   // Typewriter setup.
   var typedElements = document.getElementsByClassName('typewrite');
   for (var i = 0; i < typedElements.length; ++i) {
@@ -10,4 +10,7 @@ window.onload = function () {
       typeWriter.tick();
     }
   }
+
+  // Overlay setup.
+  Overlay.init();
 };

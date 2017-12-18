@@ -53,15 +53,15 @@
 
 /* Overlay navigation functionality for small screens. */
 // Open overlay.
-var overlay = document.getElementById('nav-overlay');
-document.getElementById('nav-icon').addEventListener('click', function(e) {
-  overlay.style.height = '100%';
-});
-
-// Close Overlay.
-document.getElementById('close-overlay').addEventListener('click', function(e) {
-  overlay.style.height = '0%';
-});
+// var overlay = document.getElementById('nav-overlay');
+// document.getElementById('nav-icon').addEventListener('click', function(e) {
+//   overlay.style.height = '100%';
+// });
+// 
+// // Close Overlay.
+// document.getElementById('close-overlay').addEventListener('click', function(e) {
+//   overlay.style.height = '0%';
+// });
 
 // // Page fade out before loading new page.
 // var pageLinks = document.getElementsByClassName('page-swap');
