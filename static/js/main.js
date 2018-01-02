@@ -1,4 +1,9 @@
 window.onload = function() {
+  // Resize the landing page if applicable.
+  if (document.getElementById('landing-section') !== null) {
+    Resize.resize();
+  }
+
   // Typewriter setup.
   var typedElements = document.getElementsByClassName('typewrite');
   for (var i = 0; i < typedElements.length; ++i) {
@@ -14,3 +19,7 @@ window.onload = function() {
   // Overlay setup.
   Overlay.init();
 };
+
+window.onresize = function () {
+  Resize.resize();
+}

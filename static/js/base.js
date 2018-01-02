@@ -57,7 +57,7 @@
 // document.getElementById('nav-icon').addEventListener('click', function(e) {
 //   overlay.style.height = '100%';
 // });
-// 
+//
 // // Close Overlay.
 // document.getElementById('close-overlay').addEventListener('click', function(e) {
 //   overlay.style.height = '0%';
@@ -98,15 +98,15 @@ window.onload = function() {
   // resize();
 
   // TypeWriter.
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i = 0; i < elements.length; i++) {
-    var textPool = elements[i].getAttribute('data-text');
-    var waitTime = elements[i].getAttribute('data-delay');
-    if (textPool) {
-      new TypeWriter(elements[i], JSON.parse(textPool), waitTime);
-    }
-  }
-};
+//   var elements = document.getElementsByClassName('typewrite');
+//   for (var i = 0; i < elements.length; i++) {
+//     var textPool = elements[i].getAttribute('data-text');
+//     var waitTime = elements[i].getAttribute('data-delay');
+//     if (textPool) {
+//       new TypeWriter(elements[i], JSON.parse(textPool), waitTime);
+//     }
+//   }
+// };
 
 // Functions.
 function resize() {
