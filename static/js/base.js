@@ -95,7 +95,7 @@ window.onresize = function () {
 // Executes once the window has loaded.
 window.onload = function() {
   // Resize for the landing page.
-  // resize();
+  resize();
 
   // TypeWriter.
 //   var elements = document.getElementsByClassName('typewrite');
@@ -106,7 +106,7 @@ window.onload = function() {
 //       new TypeWriter(elements[i], JSON.parse(textPool), waitTime);
 //     }
 //   }
-// };
+};
 
 // Functions.
 function resize() {

@@ -154,6 +154,9 @@ button:focus {
 /*** Main Content ***/
 /* Landing Page */
 #landing-section {
+  bottom: 0;
+  position: absolute;
+  top: 98px;
 }
 
 #landing-section h1 {

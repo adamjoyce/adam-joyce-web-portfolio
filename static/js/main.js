@@ -1,7 +1,7 @@
 window.onload = function() {
   // Resize the landing page if applicable.
   if (document.getElementById('landing-section') !== null) {
-    Resize.resize();
+    Recenter.recenter();
   }
 
   // Typewriter setup.
@@ -21,5 +21,6 @@ window.onload = function() {
 };
 
 window.onresize = function () {
-  Resize.resize();
+  Recenter.updatePageHeight();
+  Recenter.recenter();
 }
