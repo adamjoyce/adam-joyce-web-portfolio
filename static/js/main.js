@@ -1,8 +1,9 @@
 window.onload = function() {
   // Resize the landing page if applicable.
-  if (document.getElementById('landing-section') !== null) {
-    Recenter.recenter();
-  }
+  // if (document.getElementById('landing-section') !== null) {
+  //   Center.contentToCenter = document.getElementById('landing-content');
+  //   Center.centerContent();
+  // }
 
   // Typewriter setup.
   var typedElements = document.getElementsByClassName('typewrite');
@@ -20,7 +21,7 @@ window.onload = function() {
   Overlay.init();
 };
 
-window.onresize = function () {
-  Recenter.updatePageHeight();
-  Recenter.recenter();
-}
+// window.onresize = function () {
+//   Center.updatePageHeight();
+//   Center.centerContent();
+// }

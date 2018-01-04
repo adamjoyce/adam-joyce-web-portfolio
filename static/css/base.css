@@ -154,9 +154,10 @@ button:focus {
 /*** Main Content ***/
 /* Landing Page */
 #landing-section {
-  bottom: 0;
+  display: inline-block;
   position: absolute;
-  top: 98px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #landing-section h1 {
@@ -167,9 +168,12 @@ button:focus {
   margin: 1rem 0;
 }
 
-#landing-content {
+/* #landing-content {
   display: inline-block;
-}
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+} */
 /*** End of Main Content ***/
 
 /*** Animations ***/
