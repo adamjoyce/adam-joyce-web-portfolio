@@ -157,6 +157,8 @@ button:focus {
   display: inline-block;
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -167,32 +169,33 @@ button:focus {
 #landing-section p {
   margin: 1rem 0;
 }
-
-/* #landing-content {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-} */
 /*** End of Main Content ***/
 
 /*** Animations ***/
 @-webkit-keyframes bounce {
   0%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
   }
 
   50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
   }
 }
 
 @keyframes bounce {
   0%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
   }
 
   50% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
   }
 }
@@ -201,6 +204,10 @@ button:focus {
 @media (max-width: 680px) {
   #nav-icon {
     display: inline;
+  }
+
+  #landing-section h1 {
+    font-size: 3rem;
   }
 
   .nav-bar {
