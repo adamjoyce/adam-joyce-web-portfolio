@@ -5,7 +5,8 @@ window.onload = function() {
     var header = document.getElementById('header-container');
     var headerStyle = window.getComputedStyle(header);
     var lineStyle = window.getComputedStyle(
-      document.getElementsByClassName('horizontal-line')[0]);
+                      document.getElementsByClassName('horizontal-line')[0]
+                    );
     var headerHeight = header.offsetHeight +
                        (parseInt(headerStyle.marginTop) || 0) +
                        (parseInt(headerStyle.marginBottom) || 0) +

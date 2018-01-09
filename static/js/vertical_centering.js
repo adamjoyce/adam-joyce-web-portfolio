@@ -4,11 +4,13 @@
  */
 var VerticalCentering = {
   windowHeight: window.innerHeight,
+  paddingHeight: 48,
   headerHeight: '',
   centerContent: '',
 
   checkForOverlap: function() {
-    var overlapThreshold = this.windowHeight - this.headerHeight;
+    var overlapThreshold = this.windowHeight - this.headerHeight -
+                           this.paddingHeight;
     if (this.centerContent.classList.contains('vertical-center') &&
         this.centerContent.clientHeight >= overlapThreshold) {
       // Disable centering.
