@@ -11,7 +11,6 @@ window.onload = function() {
                        (parseInt(headerStyle.marginTop) || 0) +
                        (parseInt(headerStyle.marginBottom) || 0) +
                        (parseInt(lineStyle.height) || 0);
-    console.log(parseInt(header.marginTop));
     VerticalCentering.headerHeight = headerHeight;
 
     VerticalCentering.centerContent = document.getElementById('landing-section');
