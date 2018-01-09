@@ -55,6 +55,14 @@ button:focus {
   border-right: 2px solid #ee2b47;
   border-top: 2px solid #b52036;
 }
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 /*** End of Generic Elements ***/
 
 /*** Header ***/
@@ -155,11 +163,6 @@ button:focus {
 /* Landing Page */
 #landing-section {
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 #landing-section h1 {
@@ -206,10 +209,6 @@ button:focus {
     display: inline;
   }
 
-  #landing-section h1 {
-    font-size: 2.5em;
-  }
-
   .nav-bar {
     display: none;
   }
@@ -225,12 +224,12 @@ button:focus {
   }
 }
 
-@media (orientation: landscape) and (max-width: 1000px) {
+/* @media (orientation: landscape) and (max-width: 1000px) {
   #landing-section {
     position: relative;
     top: 0;
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
-}
+} */
 /*** End of Media Queries ***/
