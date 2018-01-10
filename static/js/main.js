@@ -34,6 +34,8 @@ window.onload = function() {
 };
 
 window.onresize = function () {
-  VerticalCentering.updatePageHeight();
-  VerticalCentering.checkForOverlap();
+  if (document.getElementById('landing-section') !== null) {
+    VerticalCentering.updatePageHeight();
+    VerticalCentering.checkForOverlap();
+  }
 }

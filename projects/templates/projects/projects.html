@@ -3,5 +3,21 @@
 {% load static %}
 
 {% block page_content %}
-The Projects Home Page.
+<section id="project-section">
+  <!-- Project Dates Search -->
+  <div id="project-dates">
+    {% for year in dates %}
+    <a href="#">{{ year }}</a>
+    {% endfor %}
+  </div>
+
+  <!-- Project Case Studies -->
+  <div id="project-cases">
+    {% for project in projects %}
+    <div class="project">
+      {{ project.title }}
+    </div>
+    {% endfor %}
+  </div>
+</section>
 {% endblock %}

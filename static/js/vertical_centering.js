@@ -5,8 +5,8 @@
 var VerticalCentering = {
   windowHeight: window.innerHeight,
   paddingHeight: 48,
-  headerHeight: '',
-  centerContent: '',
+  headerHeight: {},
+  centerContent: {},
 
   checkForOverlap: function() {
     var overlapThreshold = this.windowHeight - this.headerHeight -
@@ -21,10 +21,6 @@ var VerticalCentering = {
       //Enable centering.
       this.centerContent.classList.add('vertical-center');
     }
-    console.log("thres: " + overlapThreshold);
-    console.log("content: " + this.centerContent.clientHeight);
-    console.log("window: " + this.windowHeight);
-    console.log("header: " + this.headerHeight);
   },
 
   updatePageHeight: function() {

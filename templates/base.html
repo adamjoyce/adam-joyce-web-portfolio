@@ -35,7 +35,7 @@
         <nav class="nav-bar">
           <ul>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{% url 'projects' %}">
                 <i class="fa fa-code" aria-hidden="true"></i>
                 Projects
               </a>
@@ -60,7 +60,7 @@
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
           <div class="overlay-content">
-            <a class="overlay-block nav-link" href="#">
+            <a class="overlay-block nav-link" href="{% url 'projects' %}">
               <i class="fa fa-code" aria-hidden="true"></i>
               Projects
             </a>
@@ -87,8 +87,8 @@
     {% block scripts %}
     {% endblock %}
     <script type="text/javascript" src="{% static 'js/overlay.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/typewriter.js' %}">
-    </script>
+    <script type="text/javascript" src="{% static 'js/typewriter.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vertical_centering.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
