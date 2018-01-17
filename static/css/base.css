@@ -10,6 +10,7 @@ body {
 a {
   color: #f6f6f6;
   text-decoration: none;
+  transition: color 0.5s;
 }
 
 button {
@@ -70,7 +71,6 @@ button:focus {
 
 .active {
   color: #ee2b47;
-  text-decoration: underline;
 }
 /*** End of Generic Elements ***/
 
@@ -185,20 +185,46 @@ button:focus {
 
 /* Project Page */
 #project-dates {
-  margin: 1em 0;
+  margin: 1em auto;
+  text-align: center;
 }
 
 #project-dates a {
   /* background: #2c2e3e; */
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 100px;
+  position: relative;
+}
+
+#project-dates a:before {
+  background: #ee2b47;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+}
+
+#project-dates .active:before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  visibility: visible;
 }
 
 #project-dates a:hover {
   color: #ee2b47;
-  text-decoration: underline;
+}
+
+#project-dates a:hover:before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  visibility: visible;
 }
 
 #project-cases a {

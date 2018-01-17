@@ -6,26 +6,32 @@
 <section id="project-section">
   <!-- Project Dates Search -->
   <div id="project-dates">
-    {% if active_year is None %}
-    <a class="active" href="{% url 'projects_all' %}">All</a>
-    {% else %}
-    <a href="{% url 'projects_all' %}">All</a>
-    {% endif %}
+    <ul>
+      {% if active_year is None %}
+      <li><a class="active" href="{% url 'projects_all' %}">All</a></li>
+      {% else %}
+      <li><a href="{% url 'projects_all' %}">All</a></li>
+      {% endif %}
 
-    {% for year in dates %}
-    {% if year == active_year %}
-    <a class="active" href="{% url 'projects_year' year %}">{{ year }}</a>
-    {% else %}
-    <a href="{% url 'projects_year' year %}">{{ year }}</a>
-    {% endif %}
-    {% endfor %}
+      {% for year in dates %}
+      {% if year == active_year %}
+      <li>
+        <a class="active" href="{% url 'projects_year' year %}">{{ year }}</a>
+      </li>
+      {% else %}
+      <li><a href="{% url 'projects_year' year %}">{{ year }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
   </div>
 
   <!-- Project Case Studies -->
   <div id="project-cases">
     {% for project in projects %}
-    <a href="#">
-      {{ project.title }}
+    <a class="project" href="#">
+      <div class="project-title">
+        {{ project.title }}
+      </div>
     </a>
     {% endfor %}
   </div>
