@@ -78,10 +78,24 @@
 
       {% block page_content %}
       {% endblock %}
-
-      {% block page_footer %}
-      {% endblock %}
     </div>
+
+    {% block page_footer %}
+    <footer id="footer-container">
+      <div id="quick-links" class="underline">
+        <ul>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <hr class="toggleable">
+      <div id="social-links">
+
+      </div>
+    </footer>
+    {% endblock %}
 
     <!-- Scripts -->
     {% block scripts %}
