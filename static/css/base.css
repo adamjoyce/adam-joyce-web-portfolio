@@ -235,6 +235,7 @@ button:focus {
 /*** Footer ***/
 #footer-container {
   background: #2c2e3e;
+  box-shadow: 0px 500px 0px 500px #2c2e3e;
   font-size: 1rem;
   min-height: 10em;
   padding: 0;
@@ -258,7 +259,8 @@ button:focus {
 }
 
 #social-links {
-
+  font-size: 2rem;
+  text-align: center;
 }
 /*** End of Footer ***/
 
