@@ -29,11 +29,22 @@
   <!-- Project Case Studies -->
   <div id="project-cases">
     {% for project in projects %}
-    <a class="project" href="#">
-      <div class="project-title">
+    {% if project.image %}
+    <a
+    class="project"
+    href="#"
+    style="background-image: url('{{ project.image.url }}')">
+      <div class="project-info">
         {{ project.title }}
       </div>
     </a>
+    {% else %}
+    <a class="project" href="#">
+      <div class="project-info">
+        {{ project.title }}
+      </div>
+    </a>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
