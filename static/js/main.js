@@ -31,6 +31,19 @@ window.onload = function() {
 
   // Overlay setup.
   Overlay.init();
+
+  // // Fade out event.
+  // var pageLinks = document.getElementsByClassName('transition');
+  // for (var i = 0; i < pageLinks.length; ++i) {
+  //   pageLinks[i].addEventListener('click', function() {
+  //     setTimeout(function() { document.body.classList.add('transition-out'); }, 10);
+  //   });
+  //
+  //   // Switch web page once transition completes.
+  //   document.body.addEventListener('transitionend', function() {
+  //     document.location.href = pageLinks[i].href;
+  //   });
+  // }
 };
 
 window.onresize = function () {
@@ -38,4 +51,4 @@ window.onresize = function () {
     VerticalCentering.updatePageHeight();
     VerticalCentering.checkForOverlap();
   }
-}
+};
