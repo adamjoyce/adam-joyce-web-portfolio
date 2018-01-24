@@ -60,7 +60,8 @@
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
           <div class="overlay-content">
-            <a class="overlay-block nav-link" href="{% url 'projects_all' %}">
+            <a
+            class="overlay-block nav-link" href="{% url 'projects_all' %}">
               <i class="fa fa-code" aria-hidden="true"></i>
               Projects
             </a>
@@ -92,10 +93,22 @@
       </div>
       <hr class="toggleable">
       <div id="social-links">
-        <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a class="github fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-github fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="linkedin fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-linkedin fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="twitter fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="facebook fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-facebook fa-stack-1x" aria-hidden="true"></i>
+        </a>
       </div>
     </footer>
     {% endblock %}

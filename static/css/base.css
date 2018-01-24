@@ -274,9 +274,26 @@ button:focus {
 }
 
 #social-links {
-  font-size: 2rem;
+  font-size: 1.25rem;
   padding-bottom: 1rem;
   text-align: center;
+}
+
+/* Social Media Logo Colors */
+#social-links .github .fa-square {
+  color: #24292e;
+}
+
+#social-links .linkedin .fa-square {
+  color: #0077B5;
+}
+
+#social-links .twitter .fa-square {
+  color: #1DA1F2;
+}
+
+#social-links .facebook .fa-square {
+  color: #3B5998;
 }
 /*** End of Footer ***/
 
