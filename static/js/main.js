@@ -32,18 +32,27 @@ window.onload = function() {
   // Overlay setup.
   Overlay.init();
 
-  // // Fade out event.
+  // Fade out event.
   // var pageLinks = document.getElementsByClassName('transition');
+  // var clickedLink;
   // for (var i = 0; i < pageLinks.length; ++i) {
-  //   pageLinks[i].addEventListener('click', function() {
-  //     setTimeout(function() { document.body.classList.add('transition-out'); }, 10);
-  //   });
+  //   pageLinks[i].addEventListener('click', function(event) {
+  //     event.preventDefault();
   //
-  //   // Switch web page once transition completes.
-  //   document.body.addEventListener('transitionend', function() {
-  //     document.location.href = pageLinks[i].href;
+  //     if (event.target.tagName.toLowerCase() !== 'a') {
+  //       clickedLink = event.target.parentNode;
+  //     }
+  //     else {
+  //       clickedLink = event.target;
+  //     }
+  //
+  //     document.body.classList.add('transition-out');
   //   });
   // }
+  //
+  // document.body.addEventListener('transitionend', function() {
+  //   document.location.href = clickedLink.getAttribute('href');
+  // });
 };
 
 window.onresize = function () {
@@ -52,3 +61,8 @@ window.onresize = function () {
     VerticalCentering.checkForOverlap();
   }
 };
+
+// window.onbeforeunload = function() {
+//   document.body.classList.add('transition-out');
+//   console.log(document.body.classList);
+// };

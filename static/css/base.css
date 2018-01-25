@@ -106,7 +106,7 @@ button:focus {
 }
 
 .transition-out {
-  transition: opacity 3s;
+  transition: opacity 0.5s;
   opacity: 0;
 }
 /*** End of Generic Elements ***/
