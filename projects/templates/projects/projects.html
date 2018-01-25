@@ -30,17 +30,24 @@
   <div id="project-cases">
     {% for project in projects %}
     {% if project.image %}
-    <a
-    class="project"
-    href="#"
-    style="background-image: url('{{ project.image.url }}')">
-      <div class="project-info">
+    <a href="#">
+      <div class="project" style="background-image: url('{{ project.image.url }}')">
+        <div class="project-overlay">
+          <span>{{ project.date.year }}</span>
+        </div>
+      </div>
+      <div class="project-info-touch">
         {{ project.title }}
       </div>
     </a>
     {% else %}
-    <a class="project" href="#">
-      <div class="project-info">
+    <a href="#">
+      <div class="project">
+        <div class="project-overlay">
+          <span>{{ project.date.year }}</span>
+        </div>
+      </div>
+      <div class="project-info-touch">
         {{ project.title }}
       </div>
     </a>
