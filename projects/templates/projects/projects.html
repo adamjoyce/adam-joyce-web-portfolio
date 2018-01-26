@@ -4,26 +4,59 @@
 
 {% block page_content %}
 <section id="project-section">
-  <!-- Project Dates Search -->
-  <div id="project-dates" class="underline">
-    <h1>Dates</h1>
-    <ul>
-      {% if active_year is None %}
-      <li><a class="active" href="{% url 'projects_all' %}">All</a></li>
-      {% else %}
-      <li><a href="{% url 'projects_all' %}">All</a></li>
-      {% endif %}
+  <!-- Project Filters -->
+  <div id="project-filters">
+    <!-- All Projects -->
+    <div class="underline">
+      <ul>
+        {% if active_category is None and active_year is None %}
+        <li><a class="active" href="{% url 'projects_all' %}">All</a></li>
+        {% else %}
+        <li><a href="{% url 'projects_all' %}">All</a></li>
+        {% endif %}
+        <li></li>
+      </ul>
+    </div>
 
-      {% for year in dates %}
-      {% if year == active_year %}
-      <li>
-        <a class="active" href="{% url 'projects_year' year %}">{{ year }}</a>
-      </li>
-      {% else %}
-      <li><a href="{% url 'projects_year' year %}">{{ year }}</a></li>
-      {% endif %}
-      {% endfor %}
-    </ul>
+    <!-- Categories -->
+    <div class="underline">
+      <h1>Categories</h1>
+      <ul>
+        {% for cat in categories %}
+        {% if cat.name == active_category|title %}
+        <li>
+          <a class="active" href="{% url 'projects_cat' cat.slug %}">
+            {{ cat }}
+          </a>
+        </li>
+        {% else %}
+        <li><a href="{% url 'projects_cat' cat.slug %}">{{ cat }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Dates -->
+    <div class="underline">
+      <h1>Dates</h1>
+      <ul>
+        {% for year in dates %}
+        {% if year == active_year %}
+        <li>
+          <a class="active" href="{% url 'projects_year' year %}">
+            {{ year }}
+          </a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'projects_year' year %}">
+          {{ year }}
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 
   <!-- Project Case Studies -->

@@ -225,18 +225,18 @@ button:focus {
   margin: 4rem 0;
 }
 
-#project-dates {
+#project-filters {
   margin-top: 1rem;
   text-align: center;
 }
 
-#project-dates > h1 {
+#project-filters h1 {
   color: #ee2b47;
   font-size: 1.4rem;
   margin-bottom: 0.25rem;
 }
 
-#project-dates a:hover {
+#project-filters a:hover {
   color: #ee2b47;
 }
 
@@ -409,7 +409,7 @@ button:focus {
       grid-template-columns: 1fr 4fr;
     }
 
-    #project-dates {
+    #project-filters {
       text-align: left;
     }
 
