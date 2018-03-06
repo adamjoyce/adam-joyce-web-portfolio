@@ -9,7 +9,7 @@
     <!-- All Projects -->
     <div class="underline">
       <ul>
-        {% if active_category is None and active_year is None %}
+        {% if active_filter is None %}
         <li><a class="active" href="{% url 'projects_all' %}">All</a></li>
         {% else %}
         <li><a href="{% url 'projects_all' %}">All</a></li>
@@ -25,12 +25,12 @@
         {% for cat in categories %}
         {% if cat.name == active_category|title %}
         <li>
-          <a class="active" href="{% url 'projects_cat' cat.slug %}">
+          <a class="active" href="{% url 'projects_filtered' cat.slug %}">
             {{ cat }}
           </a>
         </li>
         {% else %}
-        <li><a href="{% url 'projects_cat' cat.slug %}">{{ cat }}</a></li>
+        <li><a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a></li>
         {% endif %}
         {% endfor %}
       </ul>
@@ -41,15 +41,15 @@
       <h1>Dates</h1>
       <ul>
         {% for year in dates %}
-        {% if year == active_year %}
+        {% if year == active_filter %}
         <li>
-          <a class="active" href="{% url 'projects_year' year %}">
+          <a class="active" href="{% url 'projects_filtered' year %}">
             {{ year }}
           </a>
         </li>
         {% else %}
         <li>
-          <a href="{% url 'projects_year' year %}">
+          <a href="{% url 'projects_filtered' year %}">
           {{ year }}
           </a>
         </li>

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from .models import Category, Project
 
-def projects(request, active_category=None, active_year=None):
+def projects(request, active_filter=None):
     context_dict = {}
 
     # Get all categories for filtering.
@@ -18,20 +18,22 @@ def projects(request, active_category=None, active_year=None):
             dates.append(year)
     context_dict['dates'] = dates
 
-    print(active_year)
-
     # Sort projects depending on active filter.
-    if active_category:
-        projects = Project.objects.filter(
-            categories__name__iexact=active_category).order_by('-date')
-    elif active_year:
-        active_year = int(active_year)
-        print('WORKING')
-        projects = Project.objects.filter(
-            date__year=active_year).order_by('-date')
+    if active_filter:
+        for cat in categories:
+            if active_filter.title() == cat.name:
+                projects = Project.objects.filter(
+                    categories__name__iexact=active_filter.title()).order_by(
+                    '-date')
+                break
+        else:
+            # Active filter is a year.
+            active_filter = int(active_filter)
+            projects = Project.objects.filter(
+                date__year=active_filter).order_by('-date')
 
-    context_dict['active_category'] = active_category
-    context_dict['active_year'] = active_year
+        context_dict['active_filter'] = active_filter
+
     context_dict['projects'] = projects
 
     return render (request, 'projects/projects.html', context_dict);
