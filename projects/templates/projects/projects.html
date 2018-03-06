@@ -10,9 +10,13 @@
     <div class="underline">
       <ul>
         {% if active_filter is None %}
-        <li><a class="active" href="{% url 'projects_all' %}">All</a></li>
+        <li>
+          <a class="active" href="{% url 'projects_all' %}">
+            All Projects
+          </a>
+        </li>
         {% else %}
-        <li><a href="{% url 'projects_all' %}">All</a></li>
+        <li><a href="{% url 'projects_all' %}">All Projects</a></li>
         {% endif %}
         <li></li>
       </ul>
@@ -23,7 +27,7 @@
       <h1>Categories</h1>
       <ul>
         {% for cat in categories %}
-        {% if cat.name == active_category|title %}
+        {% if cat.name == active_filter|title %}
         <li>
           <a class="active" href="{% url 'projects_filtered' cat.slug %}">
             {{ cat }}

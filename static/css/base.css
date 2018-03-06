@@ -233,7 +233,11 @@ button:focus {
 #project-filters h1 {
   color: #ee2b47;
   font-size: 1.4rem;
-  margin-bottom: 0.25rem;
+  margin: 2.5rem 0 0.5rem 0;
+}
+
+#project-filters ul > li {
+  margin: 0.1rem 0;
 }
 
 #project-filters a:hover {

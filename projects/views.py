@@ -27,11 +27,10 @@ def projects(request, active_filter=None):
                     '-date')
                 break
         else:
-            # Active filter is a year.
+            # Active filter is a year date.
             active_filter = int(active_filter)
             projects = Project.objects.filter(
                 date__year=active_filter).order_by('-date')
-
         context_dict['active_filter'] = active_filter
 
     context_dict['projects'] = projects
