@@ -12,8 +12,8 @@ var Overlay = {
     });
 
     // Close Overlay.
-    document.getElementById('close-overlay').addEventListener('click',
-                                                              function(e) {
+    document.getElementById('close-overlay').addEventListener(
+      'click', function(e) {
       overlay.style.height = '0%';
     });
   }

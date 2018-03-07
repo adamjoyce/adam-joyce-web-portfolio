@@ -53,6 +53,11 @@ window.onload = function() {
   // document.body.addEventListener('transitionend', function() {
   //   document.location.href = clickedLink.getAttribute('href');
   // });
+
+  // Filters for project pages.
+  if (document.getElementById('collapsible-filters') !== null) {
+    Filters.init();
+  }
 };
 
 window.onresize = function () {

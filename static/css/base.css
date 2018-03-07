@@ -230,8 +230,24 @@ button:focus {
   text-align: center;
 }
 
+#project-filters > button {
+  background: #34374c;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
 #project-filters h1 {
   color: #ee2b47;
+  font-size: 1.6rem;
+}
+
+#collapsible-filters {
+  height: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+#project-filters .underline > h1 {
   font-size: 1.4rem;
   margin: 2.5rem 0 0.5rem 0;
 }
