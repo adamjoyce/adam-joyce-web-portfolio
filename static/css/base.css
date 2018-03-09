@@ -278,17 +278,25 @@ button:focus {
   background: #ee2b47;
   height: 100%;
   opacity: 0;
+  overflow: hidden;
 }
 
 .project-overlay:hover {
-  opacity: 0.9;
-  transition: opacity 0.5s linear;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.project-overlay:hover > span {
+  bottom: 0;
+  opacity: 1;
+  transition: 1s ease-out 0.1s;
 }
 
 .project-overlay > span {
-  padding: 0.5rem;
+  bottom: 15%;
+  opacity: 0;
+  padding: 1rem;
   position: absolute;
-  top: 0;
 }
 
 .project-overlay > span > hr {
