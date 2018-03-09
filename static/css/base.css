@@ -275,17 +275,28 @@ button:focus {
 }
 
 .project-overlay {
+  background: #ee2b47;
   height: 100%;
-  transition: all 0.2s linear 0.2s;
+  opacity: 0;
 }
 
 .project-overlay:hover {
-  background: #ee2b47;
+  opacity: 0.9;
+  transition: opacity 0.5s linear;
 }
 
 .project-overlay > span {
+  padding: 0.5rem;
   position: absolute;
   top: 0;
+}
+
+.project-overlay > span > hr {
+  background: #f6f6f6;
+  border: none;
+  margin: 0.25rem 0;
+  height: 2px;
+  width: 2.7rem;
 }
 
 .project-info-touch {

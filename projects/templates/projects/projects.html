@@ -77,7 +77,13 @@
     <a href="#">
       <div class="project" style="background-image: url('{{ project.image.url }}')">
         <div class="project-overlay">
-          <span>{{ project.date.year }}</span>
+          <span>
+            {{ project.date.year }}
+            <hr>
+            {% for cat in project.categories.all %}
+            {{ cat.name }}<br>
+            {% endfor %}
+          </span>
         </div>
       </div>
       <div class="project-info-touch">
