@@ -433,6 +433,10 @@ button:focus {
       text-align: left;
     }
 
+    #collapsible-filters {
+      height: 100%;
+    }
+
     #project-cases {
       display: grid;
       grid-gap: 1rem;

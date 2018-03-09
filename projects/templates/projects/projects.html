@@ -10,60 +10,62 @@
       <h1>Filters  <i class="fa fa-angle-down" aria-hidden="true"></i></h1>
     </button>
     <div id="collapsible-filters">
-      <!-- All Projects -->
-      <div class="underline">
-        <ul>
-          {% if active_filter is None %}
-          <li>
-            <a class="active" href="{% url 'projects_all' %}">
-              All Projects
-            </a>
-          </li>
-          {% else %}
-          <li><a href="{% url 'projects_all' %}">All Projects</a></li>
-          {% endif %}
-          <li></li>
-        </ul>
-      </div>
+      <div id="measuring-wrapper">
+        <!-- All Projects -->
+        <div class="underline">
+          <ul>
+            {% if active_filter is None %}
+            <li>
+              <a class="active" href="{% url 'projects_all' %}">
+                All Projects
+              </a>
+            </li>
+            {% else %}
+            <li><a href="{% url 'projects_all' %}">All Projects</a></li>
+            {% endif %}
+            <li></li>
+          </ul>
+        </div>
 
-      <!-- Categories -->
-      <div class="underline">
-        <h1>Categories</h1>
-        <ul>
-          {% for cat in categories %}
-          {% if cat.name == active_filter|title %}
-          <li>
-            <a class="active" href="{% url 'projects_filtered' cat.slug %}">
-              {{ cat }}
-            </a>
-          </li>
-          {% else %}
-          <li><a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a></li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
+        <!-- Categories -->
+        <div class="underline">
+          <h1>Categories</h1>
+          <ul>
+            {% for cat in categories %}
+            {% if cat.name == active_filter|title %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' cat.slug %}">
+                {{ cat }}
+              </a>
+            </li>
+            {% else %}
+            <li><a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
 
-      <!-- Dates -->
-      <div class="underline">
-        <h1>Dates</h1>
-        <ul>
-          {% for year in dates %}
-          {% if year == active_filter %}
-          <li>
-            <a class="active" href="{% url 'projects_filtered' year %}">
+        <!-- Dates -->
+        <div class="underline">
+          <h1>Dates</h1>
+          <ul>
+            {% for year in dates %}
+            {% if year == active_filter %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' year %}">
+                {{ year }}
+              </a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'projects_filtered' year %}">
               {{ year }}
-            </a>
-          </li>
-          {% else %}
-          <li>
-            <a href="{% url 'projects_filtered' year %}">
-            {{ year }}
-            </a>
-          </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
