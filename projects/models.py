@@ -22,6 +22,8 @@ class Project(models.Model):
     date = models.DateTimeField(default=timezone.now)
     description = models.TextField()
     image = models.ImageField(upload_to='projects/project_images', blank=True)
+    color = models.TextField(blank=True,
+                             help_text='Background color for project overlay.')
     slug = models.SlugField(unique=True, blank=True)
 
     def get_year(self):

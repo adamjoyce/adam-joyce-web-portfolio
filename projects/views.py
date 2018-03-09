@@ -35,4 +35,4 @@ def projects(request, active_filter=None):
 
     context_dict['projects'] = projects
 
-    return render (request, 'projects/projects.html', context_dict);
+    return render (request, 'projects/projects.html', context_dict)

@@ -76,7 +76,11 @@
     {% if project.image %}
     <a href="#">
       <div class="project" style="background-image: url('{{ project.image.url }}')">
+        {% if project.color %}
+        <div class="project-overlay" style="background: {{ project.color }};">
+        {% else %}
         <div class="project-overlay">
+        {% endif %}
           <span>
             {{ project.date.year }}
             <hr>
@@ -93,8 +97,13 @@
     {% else %}
     <a href="#">
       <div class="project">
-        <div class="project-overlay">
-          <span>{{ project.date.year }}</span>
+        <span>
+          {{ project.date.year }}
+          <hr>
+          {% for cat in project.categories.all %}
+          {{ cat.name }}<br>
+          {% endfor %}
+        </span>
         </div>
       </div>
       <div class="project-info-touch">
