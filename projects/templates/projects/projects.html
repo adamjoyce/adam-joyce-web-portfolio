@@ -73,9 +73,9 @@
   <!-- Project Case Studies -->
   <div id="project-cases">
     {% for project in projects %}
-    {% if project.image %}
     <a href="#">
-      <div class="project" style="background-image: url('{{ project.image.url }}')">
+      <div class="project"
+           style="background-image: url('{{ project.get_image }}')">
         {% if project.color %}
         <div class="project-overlay" style="background: {{ project.color }};">
         {% else %}
@@ -94,23 +94,6 @@
         {{ project.title }}
       </div>
     </a>
-    {% else %}
-    <a href="#">
-      <div class="project">
-        <span>
-          {{ project.date.year }}
-          <hr>
-          {% for cat in project.categories.all %}
-          {{ cat.name }}<br>
-          {% endfor %}
-        </span>
-        </div>
-      </div>
-      <div class="project-info-touch">
-        {{ project.title }}
-      </div>
-    </a>
-    {% endif %}
     {% endfor %}
   </div>
 </section>

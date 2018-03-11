@@ -26,6 +26,12 @@ class Project(models.Model):
                              help_text='Background color for project overlay.')
     slug = models.SlugField(unique=True, blank=True)
 
+    def get_image(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return '/static/images/default_project.jpg'
+
     def get_year(self):
         return self.date.year;
 
