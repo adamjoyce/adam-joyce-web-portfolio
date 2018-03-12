@@ -428,7 +428,6 @@ button:focus {
   }
 
   #invalid-category {
-    display: block;
     text-align: center;
   }
 
