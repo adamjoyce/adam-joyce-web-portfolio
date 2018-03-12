@@ -20,17 +20,24 @@ def projects(request, active_filter=None):
 
     # Sort projects depending on active filter.
     if active_filter:
+        isCategory = False
         for cat in categories:
             if active_filter.title() == cat.name:
                 projects = Project.objects.filter(
                     categories__name__iexact=active_filter.title()).order_by(
                     '-date')
+                isCategory = True
                 break
-        else:
-            # Active filter is a year date.
-            active_filter = int(active_filter)
-            projects = Project.objects.filter(
-                date__year=active_filter).order_by('-date')
+
+        if not isCategory:
+            if active_filter.isdigit():
+                # Active filter is a year date.
+                active_filter = int(active_filter)
+                projects = Project.objects.filter(
+                    date__year=active_filter).order_by('-date')
+            else:
+                # Active filter is not valid.
+                active_filter = 'INVALID'
         context_dict['active_filter'] = active_filter
 
     context_dict['projects'] = projects

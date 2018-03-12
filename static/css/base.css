@@ -260,6 +260,10 @@ button:focus {
   color: #ee2b47;
 }
 
+#invalid-category {
+  margin-top: 1rem;
+}
+
 #project-cases > a {
   width: 100%;
 }
@@ -309,6 +313,18 @@ button:focus {
 
 .project-info-touch {
   margin-bottom: 2rem;
+}
+
+.project-info-touch span:first-of-type {
+  border-bottom: 2px solid #f6f6f6;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.project-info-touch span {
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 /*** End of Main Content ***/
 
@@ -411,6 +427,11 @@ button:focus {
     font-size: 2.5rem;
   }
 
+  #invalid-category {
+    display: block;
+    text-align: center;
+  }
+
   .nav-bar {
     display: none;
   }
@@ -423,17 +444,6 @@ button:focus {
     display: block;
   }
 }
-
-/* @media (min-width: 63.75em) {
-  .project-overlay {
-    height: 100%;
-    transition: all 0.2s linear 0.2s;
-  }
-
-  .project-overlay:hover {
-    background: #ee2b47;
-  }
-} */
 
 @media (min-width: 75em) {    /* 1200px */
   #page-container {

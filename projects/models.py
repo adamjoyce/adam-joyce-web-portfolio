@@ -20,6 +20,8 @@ class Project(models.Model):
     categories = models.ManyToManyField(Category)
     title = models.CharField(max_length=25, unique=True)
     date = models.DateTimeField(default=timezone.now)
+    summary = models.CharField(max_length=100, default='Project summary.',
+                               help_text='A short summary of the project.')
     description = models.TextField()
     image = models.ImageField(upload_to='projects/project_images', blank=True)
     color = models.TextField(blank=True,

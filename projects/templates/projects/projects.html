@@ -71,6 +71,9 @@
   </div>
 
   <!-- Project Case Studies -->
+  {% if active_filter == 'INVALID' %}
+  <span id="invalid-category">That category does not exist.</span>
+  {% else %}
   <div id="project-cases">
     {% for project in projects %}
     <a href="#">
@@ -91,10 +94,12 @@
         </div>
       </div>
       <div class="project-info-touch">
-        {{ project.title }}
+        <span>{{ project.title }}</span><br>
+        <span>{{ project.summary }}</span>
       </div>
     </a>
     {% endfor %}
   </div>
+  {% endif %}
 </section>
 {% endblock %}
