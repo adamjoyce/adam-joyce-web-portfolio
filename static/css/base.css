@@ -220,7 +220,7 @@ button:focus {
   margin: 1rem 0;
 }
 
-/* Project Page */
+/* Projects Page */
 #project-section {
   margin: 4rem 0;
 }
@@ -248,11 +248,12 @@ button:focus {
 }
 
 #project-filters .underline > h1 {
-  font-size: 1.4rem;
-  margin: 2.5rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
 #project-filters ul > li {
+  font-size: 1.1rem;
   margin: 0.1rem 0;
 }
 
@@ -326,6 +327,9 @@ button:focus {
   font-size: 1rem;
   margin-top: 0.5rem;
 }
+
+/* Project_page pages (individual project pages) */
+
 /*** End of Main Content ***/
 
 /*** Footer ***/

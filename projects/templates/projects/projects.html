@@ -27,11 +27,31 @@
           </ul>
         </div>
 
-        <!-- Categories -->
+        <!-- Financial Categories -->
         <div class="underline">
           <h1>Categories</h1>
           <ul>
             {% for cat in financial_categories %}
+            {% if cat.name == cat_filter|title %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' cat.slug %}">
+                {{ cat }}
+              </a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Technology Categories -->
+        <div class="underline">
+          <h1>Technologies</h1>
+          <ul>
+            {% for cat in technology_categories %}
             {% if cat.name == cat_filter|title %}
             <li>
               <a class="active" href="{% url 'projects_filtered' cat.slug %}">
@@ -73,12 +93,14 @@
   </div>
 
   <!-- Project Case Studies -->
+  {% block project_grid %}
   {% if cat_filter == 'INVALID' %}
   <div id="invalid-category">That category does not exist.</div>
   {% else %}
   <div id="project-cases">
     {% for project in projects %}
-    <a href="#">
+    <a href=
+    "{% url 'project_page' project.financial_categories.slug project.slug%}">
       <div class="project"
            style="background-image: url('{{ project.get_image }}')">
         {% if project.color %}
@@ -104,5 +126,6 @@
     {% endfor %}
   </div>
   {% endif %}
+  {% endblock %}
 </section>
 {% endblock %}
