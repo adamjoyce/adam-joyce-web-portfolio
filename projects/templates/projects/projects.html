@@ -14,7 +14,7 @@
         <!-- All Projects -->
         <div class="underline">
           <ul>
-            {% if active_filter is None %}
+            {% if cat_filter is None %}
             <li>
               <a class="active" href="{% url 'projects_all' %}">
                 All Projects
@@ -31,15 +31,17 @@
         <div class="underline">
           <h1>Categories</h1>
           <ul>
-            {% for cat in categories %}
-            {% if cat.name == active_filter|title %}
+            {% for cat in financial_categories %}
+            {% if cat.name == cat_filter|title %}
             <li>
               <a class="active" href="{% url 'projects_filtered' cat.slug %}">
                 {{ cat }}
               </a>
             </li>
             {% else %}
-            <li><a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a></li>
+            <li>
+              <a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a>
+            </li>
             {% endif %}
             {% endfor %}
           </ul>
@@ -50,7 +52,7 @@
           <h1>Dates</h1>
           <ul>
             {% for year in dates %}
-            {% if year == active_filter %}
+            {% if year == cat_filter %}
             <li>
               <a class="active" href="{% url 'projects_filtered' year %}">
                 {{ year }}
@@ -71,7 +73,7 @@
   </div>
 
   <!-- Project Case Studies -->
-  {% if active_filter == 'INVALID' %}
+  {% if cat_filter == 'INVALID' %}
   <div id="invalid-category">That category does not exist.</div>
   {% else %}
   <div id="project-cases">
@@ -87,7 +89,8 @@
           <span>
             {{ project.date.year }}
             <hr>
-            {% for cat in project.categories.all %}
+            {{ project.financial_categories.name }}<br>
+            {% for cat in project.technology_categories.all %}
             {{ cat.name }}<br>
             {% endfor %}
           </span>

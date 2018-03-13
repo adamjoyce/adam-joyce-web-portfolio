@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.projects, name='projects_all'),
-    url(r'^(?P<active_filter>.+)/$', views.projects, name='projects_filtered')
+    path('', views.projects, name='projects_all'),
+    path('<str:cat_filter>/', views.projects, name='projects_filtered')
 ]

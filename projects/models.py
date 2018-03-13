@@ -16,8 +16,18 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class FinancialCategory(Category):
+    class Meta:
+        verbose_name_plural = 'FinancialCategories'
+
+class TechnologyCategory(Category):
+    class Meta:
+        verbose_name_plural = 'TechnologyCategories'
+
 class Project(models.Model):
-    categories = models.ManyToManyField(Category)
+    financial_categories = models.ForeignKey(FinancialCategory,
+                                             on_delete=models.CASCADE)
+    technology_categories = models.ManyToManyField(TechnologyCategory)
     title = models.CharField(max_length=25, unique=True)
     date = models.DateTimeField(default=timezone.now)
     summary = models.CharField(max_length=100, default='Project summary.',
