@@ -329,7 +329,34 @@ button:focus {
 }
 
 /* Project_page pages (individual project pages) */
+#project-page {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  margin: 1rem 0;
+}
 
+#project-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#project-links {
+  margin-top: 1.65rem;
+}
+
+#project-links a {
+  color: #9b9b9b;
+}
+
+#project-image {
+  background-color: #2c2e3e;
+  background-position: top;
+  background-size: cover;
+  display: block;
+  height: 18.75rem;
+  position: relative;
+  margin-top: 2rem;
+}
 /*** End of Main Content ***/
 
 /*** Footer ***/
@@ -478,7 +505,7 @@ button:focus {
     }
 
     .project {
-      height: 25rem;
+      height: 22rem;
       margin: 0;
     }
 

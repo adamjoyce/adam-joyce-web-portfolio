@@ -3,4 +3,14 @@
 {% load static %}
 
 {% block project_grid %}
+<div id="project-page">
+  <div id="project-title"><h1>{{ project.title|upper }}</h1></div>
+  <div id="project-description">{{ project.description|safe }}</div>
+  <div id="project-links">
+    <a href="{{ project.link }}">{{ project.title }} Website</a>
+  </div>
+  <div id="project-image"
+       style="background-image: url('{{ project.get_image }}')">
+  </div>
+</div>
 {% endblock %}

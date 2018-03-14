@@ -14,7 +14,7 @@
         <!-- All Projects -->
         <div class="underline">
           <ul>
-            {% if cat_filter is None %}
+            {% if not project and cat_filter is None %}
             <li>
               <a class="active" href="{% url 'projects_all' %}">
                 All Projects
@@ -92,14 +92,14 @@
     </div>
   </div>
 
-  <!-- Project Case Studies -->
   {% block project_grid %}
+  <!-- Project Case Studies -->
   <div id="project-cases">
     {% for project in projects %}
     <a href=
     "{% url 'project_page' project.financial_categories.slug project.slug%}">
       <div class="project"
-           style="background-image: url('{{ project.get_image }}')">
+           style="background-image: url('{{ project.get_logo }}')">
         {% if project.color %}
         <div class="project-overlay" style="background: {{ project.color }};">
         {% else %}

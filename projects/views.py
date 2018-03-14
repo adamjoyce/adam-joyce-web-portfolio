@@ -65,6 +65,7 @@ def project_page(request, financial_cat, project):
     if not search_category(projects, project):
         raise Http404("The project '" + project + "' does not exist.")
 
+    project = Project.objects.get(slug=project)
     context_dict['project'] = project;
 
     return render(request, 'projects/project_page.html', context_dict)

@@ -33,10 +33,19 @@ class Project(models.Model):
     summary = models.CharField(max_length=100, default='Project summary.',
                                help_text='A short summary of the project.')
     description = models.TextField()
-    image = models.ImageField(upload_to='projects/project_images', blank=True)
+    logo = models.ImageField(upload_to='projects/project_logos', blank=True)
     color = models.TextField(blank=True,
                              help_text='Background color for project overlay.')
+    link = models.URLField()
+    image = models.ImageField(upload_to='projects/project_images', blank=True,
+                              help_text='Site image for project page.')
     slug = models.SlugField(unique=True, blank=True)
+
+    def get_logo(self):
+        if self.logo and hasattr(self.logo, 'url'):
+            return self.logo.url
+        else:
+            return '/static/images/default_project.jpg'
 
     def get_image(self):
         if self.image and hasattr(self.image, 'url'):
