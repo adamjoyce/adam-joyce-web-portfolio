@@ -32,7 +32,7 @@
           <h1>Categories</h1>
           <ul>
             {% for cat in financial_categories %}
-            {% if cat.name == cat_filter|title %}
+            {% if cat.slug == cat_filter %}
             <li>
               <a class="active" href="{% url 'projects_filtered' cat.slug %}">
                 {{ cat }}
@@ -52,7 +52,7 @@
           <h1>Technologies</h1>
           <ul>
             {% for cat in technology_categories %}
-            {% if cat.name == cat_filter|title %}
+            {% if cat.slug == cat_filter %}
             <li>
               <a class="active" href="{% url 'projects_filtered' cat.slug %}">
                 {{ cat }}
@@ -94,9 +94,6 @@
 
   <!-- Project Case Studies -->
   {% block project_grid %}
-  {% if cat_filter == 'INVALID' %}
-  <div id="invalid-category">That category does not exist.</div>
-  {% else %}
   <div id="project-cases">
     {% for project in projects %}
     <a href=
@@ -125,7 +122,6 @@
     </a>
     {% endfor %}
   </div>
-  {% endif %}
   {% endblock %}
 </section>
 {% endblock %}

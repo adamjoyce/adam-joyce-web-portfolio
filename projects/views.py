@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 
 from .models import FinancialCategory, TechnologyCategory, Project
@@ -16,18 +17,15 @@ def projects(request, cat_filter=None):
     # Sort projects depending on the active category filter.
     if cat_filter:
         category_found = False
-        cat_filter_titled = cat_filter.title()
 
         # Test to see if the category is a financial or technology category.
-        if search_category(financial_categories, cat_filter_titled):
+        if search_category(financial_categories, cat_filter):
             projects = Project.objects.filter(
-                financial_categories__name__iexact=
-                    cat_filter.title()).order_by('-date')
+                financial_categories__slug=cat_filter).order_by('-date')
             category_found = True
-        elif search_category(technology_categories, cat_filter_titled):
+        elif search_category(technology_categories, cat_filter):
             projects = Project.objects.filter(
-                technology_categories__name__iexact=
-                    cat_filter.title()).order_by('-date')
+                technology_categories__slug=cat_filter).order_by('-date')
             category_found = True
 
         if not category_found:
@@ -41,7 +39,7 @@ def projects(request, cat_filter=None):
 
         if not category_found:
             # Category is invalid.
-            cat_filter = 'INVALID'
+            raise Http404("The category '" + cat_filter + "' does not exist.")
 
         context_dict['cat_filter'] = cat_filter
 
@@ -52,10 +50,22 @@ def projects(request, cat_filter=None):
 # Individual project pages.
 def project_page(request, financial_cat, project):
     context_dict = {}
-    context_dict['project'] = project;
 
     # Setup the filter menu context dictionary entries.
     setup_filter_menu(context_dict)
+
+    # Category 404 error handling.
+    financial_categories = context_dict['financial_categories']
+    if not search_category(financial_categories, financial_cat):
+        raise Http404("'" + financial_cat +
+                      "' is not a valid financial project category.")
+
+    # Project 404 error handling.
+    projects = context_dict['projects']
+    if not search_category(projects, project):
+        raise Http404("The project '" + project + "' does not exist.")
+
+    context_dict['project'] = project;
 
     return render(request, 'projects/project_page.html', context_dict)
 
@@ -79,8 +89,8 @@ def setup_filter_menu(context_dict):
     context_dict['dates'] = dates
 
 # Searches the given list for the given name.  Returns true if found.
-def search_category(category_list, category_name):
+def search_category(category_list, category_slug):
     for cat in category_list:
-        if cat.name == category_name:
+        if cat.slug == category_slug:
             return True
     return False;

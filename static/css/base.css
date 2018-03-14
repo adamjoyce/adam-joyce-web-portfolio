@@ -261,9 +261,9 @@ button:focus {
   color: #ee2b47;
 }
 
-#invalid-category {
+/* #invalid-category {
   margin-top: 1rem;
-}
+} */
 
 #project-cases > a {
   width: 100%;
@@ -431,9 +431,9 @@ button:focus {
     font-size: 2.5rem;
   }
 
-  #invalid-category {
+  /* #invalid-category {
     text-align: center;
-  }
+  } */
 
   .nav-bar {
     display: none;
