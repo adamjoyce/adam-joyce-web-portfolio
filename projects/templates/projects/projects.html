@@ -3,5 +3,125 @@
 {% load static %}
 
 {% block page_content %}
-The Projects Home Page.
+<section id="project-section">
+  <!-- Project Filters -->
+  <div id="project-filters">
+    <button id="toggle-filters" type="button">
+      <h1>Filters  <i class="fa fa-angle-down" aria-hidden="true"></i></h1>
+    </button>
+    <div id="collapsible-filters">
+      <div id="measuring-wrapper">
+        <!-- All Projects -->
+        <div class="underline">
+          <ul>
+            {% if not project and cat_filter is None %}
+            <li>
+              <a class="active" href="{% url 'projects_all' %}">
+                All Projects
+              </a>
+            </li>
+            {% else %}
+            <li><a href="{% url 'projects_all' %}">All Projects</a></li>
+            {% endif %}
+            <li></li>
+          </ul>
+        </div>
+
+        <!-- Financial Categories -->
+        <div class="underline">
+          <h1>Categories</h1>
+          <ul>
+            {% for cat in financial_categories %}
+            {% if cat.slug == cat_filter %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' cat.slug %}">
+                {{ cat }}
+              </a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Technology Categories -->
+        <div class="underline">
+          <h1>Technologies</h1>
+          <ul>
+            {% for cat in technology_categories %}
+            {% if cat.slug == cat_filter %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' cat.slug %}">
+                {{ cat }}
+              </a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'projects_filtered' cat.slug %}">{{ cat }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Dates -->
+        <div class="underline">
+          <h1>Dates</h1>
+          <ul>
+            {% for year in dates %}
+            {% if year == cat_filter %}
+            <li>
+              <a class="active" href="{% url 'projects_filtered' year %}">
+                {{ year }}
+              </a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'projects_filtered' year %}">
+              {{ year }}
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block project_grid %}
+  <!-- Project Case Studies -->
+  <div id="project-cases">
+    {% for project in projects %}
+    <a href=
+    "{% url 'project_page' project.financial_categories.slug project.slug%}">
+      <div class="project"
+           style="background-image: url('{{ project.get_logo }}')">
+        {% if project.color %}
+        <div class="project-overlay" style="background: {{ project.color }};">
+        {% else %}
+        <div class="project-overlay">
+        {% endif %}
+          <span>
+            {{ project.date.year }}
+            <hr>
+            {{ project.financial_categories.name }}<br>
+            {% for cat in project.technology_categories.all %}
+            {{ cat.name }}<br>
+            {% endfor %}
+          </span>
+        </div>
+      </div>
+      <div class="project-info-touch">
+        <span>{{ project.title }}</span><br>
+        <span>{{ project.summary }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% endblock %}
+</section>
 {% endblock %}

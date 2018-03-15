@@ -27,6 +27,7 @@ SECRET_KEY = '7*1i%e-1x+m)+-u0#xrl=&(izq+u#)gst3lsy$wdpew!%ec)^!'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '192.168.0.3',
     '127.0.0.1',
     'adamjoycewebdev.pythonanywhere.com',
 ]
@@ -127,3 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
+# Media files (e.g. uploaded pictures)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -12,7 +12,7 @@
     <link href="{% static 'css/reset.css' %}" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
   </head>
-  <body>
+  <body class="transition-in">
     <div class="horizontal-line"></div>
     <div id="page-container">
       <header id="header-container">
@@ -35,7 +35,7 @@
         <nav class="nav-bar">
           <ul>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{% url 'projects_all' %}">
                 <i class="fa fa-code" aria-hidden="true"></i>
                 Projects
               </a>
@@ -60,7 +60,8 @@
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
           <div class="overlay-content">
-            <a class="overlay-block nav-link" href="#">
+            <a
+            class="overlay-block nav-link" href="{% url 'projects_all' %}">
               <i class="fa fa-code" aria-hidden="true"></i>
               Projects
             </a>
@@ -80,12 +81,45 @@
       {% endblock %}
     </div>
 
+    {% block page_footer %}
+    <footer id="footer-container">
+      <div id="quick-links" class="underline">
+        <ul>
+          <li><a href="{% url 'projects_all' %}">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <hr class="toggleable">
+      <div id="social-links">
+        <a class="github fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-github fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="linkedin fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-linkedin fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="twitter fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-stack-1x" aria-hidden="true"></i>
+        </a>
+        <a class="facebook fa-stack" href="#">
+          <i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-facebook fa-stack-1x" aria-hidden="true"></i>
+        </a>
+      </div>
+    </footer>
+    {% endblock %}
+
     <!-- Scripts -->
     {% block scripts %}
     {% endblock %}
+    <script type="text/javascript" src="{% static 'js/filters.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/overlay.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/typewriter.js' %}">
-    </script>
+    <script type="text/javascript" src="{% static 'js/typewriter.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vertical_centering.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
