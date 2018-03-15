@@ -2,14 +2,18 @@
 {% extends 'projects/projects.html' %}
 {% load static %}
 
+{% block title %}
+<title>{{ project.title }} - Adam Joyce Web Developer</title>
+{% endblock %}
+
 {% block project_grid %}
-<div id="project-page">
-  <div id="project-title"><h1>{{ project.title|upper }}</h1></div>
-  <div id="project-description">{{ project.description|safe }}</div>
+<div class="page-content">
+  <div class="page-title"><h1>{{ project.title|upper }}</h1></div>
+  <div>{{ project.description|safe }}</div>
   <div id="project-links">
     <a href="{{ project.link }}">{{ project.title }} Website</a>
   </div>
-  <div id="project-image"
+  <div id="project-image-ratio" class="background-image-scalable"
        style="background-image: url('{{ project.get_image }}')">
   </div>
 </div>
