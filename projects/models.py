@@ -45,13 +45,13 @@ class Project(models.Model):
         if self.logo and hasattr(self.logo, 'url'):
             return self.logo.url
         else:
-            return '/static/images/default_project.jpg'
+            return '/static/images/default_logo.jpg'
 
     def get_image(self):
         if self.image and hasattr(self.image, 'url'):
             return self.image.url
         else:
-            return '/static/images/default_project.jpg'
+            return '/static/images/default_image.jpg'
 
     def get_year(self):
         return self.date.year;
