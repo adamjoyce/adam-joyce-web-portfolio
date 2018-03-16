@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Contact - Adam Joyce Web Developer</title>
+{% endblock %}
+
+{% block page_content %}
+<div id="page-section">
+  <div class="page-content">
+    <div class="page-title"><h1>CONTACT</h1></div>
+    <form class="input-form" action="#" method="post">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="form-field-wrapper">
+        {{ field.label_tag }}
+        {{ field }}
+      </div>
+      {% endfor %}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+{% endblock %}

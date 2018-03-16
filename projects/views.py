@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 from .models import FinancialCategory, TechnologyCategory, Project
 
@@ -66,7 +67,7 @@ def project_page(request, financial_cat, project):
         raise Http404("The project '" + project + "' does not exist.")
 
     project = Project.objects.get(slug=project)
-    context_dict['project'] = project;
+    context_dict['project'] = project
 
     return render(request, 'projects/project_page.html', context_dict)
 

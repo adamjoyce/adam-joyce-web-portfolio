@@ -132,3 +132,10 @@ STATICFILES_DIRS = [
 # Media files (e.g. uploaded pictures)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'djangotest150@gmail.com'
+EMAIL_HOST_PASSWORD = 'Testaccount150'
+EMAIL_PORT = '465'
+EMAIL_USE_SSL = True
