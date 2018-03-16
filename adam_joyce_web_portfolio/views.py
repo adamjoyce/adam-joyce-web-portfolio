@@ -17,11 +17,22 @@ def contact(request):
         # request.
         form = EmailForm(request.POST)
         if form.is_valid():
-            # Process dat in form.cleaned_data as needed.
+            # Process the form.cleaned_data as needed.
+            data = form.cleaned_data
+            text_content = ('Full Name: %s %s\n'
+                             'Comapny Name: %s\n'
+                             'Budget: %d\n'
+                             'Email: %s\n'
+                             'Message: %s' %(data['first_name'],
+                                             data['last_name'],
+                                             data['company_name'],
+                                             data['budget'],
+                                             data['email_address'],
+                                             data['project_description']))
 
             # Send the email.
             send_mail('Website Project Enquiry',
-                      form.cleaned_data['project_description'],
+                      text_content,
                       'djangotest150@gmail.com',
                       ['djangotest150@gmail.com'])
 
