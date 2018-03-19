@@ -149,9 +149,29 @@ button:focus {
   margin: 1rem 0;
 }
 
+.input-form label {
+  vertical-align: top;
+}
+
 .input-form input, textarea {
+  background: #2c2e3e;
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+  font-family: 'Asap', sans-serif;
+  font-size: 0.9rem;
   margin-left: 1rem;
+  padding: 0.2rem;
   width: 21.875rem;
+}
+
+input[value="Submit"] {
+  background: #ee2b47;
+  border-bottom: 2px solid #b52036;
+  border-left: 2px solid #ee2b47;
+  border-right: 2px solid #b52036;
+  border-top: 2px solid #ee2b47;
+  border-radius: 0.25em;
+  width: 22.4rem;
 }
 /*** End of Generic Elements ***/
 
@@ -384,6 +404,7 @@ button:focus {
 
 /* About Page */
 /* Contact */
+
 /*** End of Main Content ***/
 
 /*** Footer ***/

@@ -19,26 +19,29 @@ def contact(request):
         if form.is_valid():
             # Process the form.cleaned_data as needed.
             data = form.cleaned_data
-            text_content = ('Full Name: %s %s\n'
-                             'Comapny Name: %s\n'
-                             'Budget: %d\n'
-                             'Email: %s\n'
-                             'Message: %s' %(data['first_name'],
-                                             data['last_name'],
-                                             data['company_name'],
-                                             data['budget'],
-                                             data['email_address'],
-                                             data['project_description']))
+            full_name = data['first_name'] + ' ' + data['last_name']
+            text_content = ('Full Name: %s\n'
+                            'Comapny Name: %s\n'
+                            'Budget: %d\n'
+                            'Email: %s\n'
+                            'Message: %s' %(full_name,
+                                            data['company_name'],
+                                            data['budget'],
+                                            data['email_address'],
+                                            data['project_description']))
 
             # Send the email.
-            send_mail('Website Project Enquiry',
+            send_mail('Website Enquiry - ' + full_name,
                       text_content,
                       'djangotest150@gmail.com',
                       ['djangotest150@gmail.com'])
 
             # Redirect to thank you page.
-            return HttpResponseRedirect('#')
+            return HttpResponseRedirect('submitted')
     else:
         # The request if a GET or other method so create a blank form.
         form = EmailForm()
     return render(request, 'contact.html', {'form': form})
+
+def submitted(request):
+    return render(request, 'submitted.html')
