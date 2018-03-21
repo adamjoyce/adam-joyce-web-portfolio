@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .forms import EmailForm
 
@@ -37,7 +38,8 @@ def contact(request):
                       ['djangotest150@gmail.com'])
 
             # Redirect to thank you page.
-            return HttpResponseRedirect('submitted')
+            return HttpResponseRedirect(reverse('submitted'))
+        print(form.errors)
     else:
         # The request if a GET or other method so create a blank form.
         form = EmailForm()

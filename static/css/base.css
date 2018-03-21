@@ -173,6 +173,13 @@ input[value="Submit"] {
   border-radius: 0.25em;
   width: 22.4rem;
 }
+
+.input-error {
+  color: #ee2b47;
+  font-size: 0.9rem;
+  margin-left: 10.5rem;
+  text-align: left;
+}
 /*** End of Generic Elements ***/
 
 /*** Header ***/
@@ -217,7 +224,7 @@ input[value="Submit"] {
 }
 
 .nav-link {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
 }
 
 .nav-link:hover {
@@ -497,7 +504,7 @@ input[value="Submit"] {
 }
 
 /*** Media Queries ***/
-@media (max-width: 43.75em) {    /* 700px */
+@media (max-width: 52.75em) {    /* 844px */
   #nav-icon {
     display: inline;
   }
@@ -535,6 +542,10 @@ input[value="Submit"] {
     margin: 0;
     width: 100%;
   }
+
+  .input-error {
+    margin: 0;
+  }
 }
 
 @media (min-width: 75em) {    /* 1200px */
@@ -544,7 +555,7 @@ input[value="Submit"] {
 }
 
 @supports (display: grid) {
-  @media (min-width: 43.75em) {   /* 700px */
+  @media (min-width: 52.75em) {   /* 844px */
     #project-section {
       display: grid;
       grid-template-columns: 1fr 4fr;

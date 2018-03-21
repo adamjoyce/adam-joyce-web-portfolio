@@ -30,6 +30,15 @@ class EmailForm(forms.Form):
         max_length=100,
         widget=forms.TextInput(attrs={'placeholder': 'Your email address'})
     )
+    phone_number = forms.RegexField(
+        label='Phone Number',
+        regex='^\+\d{8,15}$',
+        max_length=16,
+        error_messages={'invalid': 'Format: +(area code)(number) e.g. \'+447779239364\'',},
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Your phone number: +(area code)(number)'}
+        )
+    )
     project_description = forms.CharField(
         label='Project Descrition',
         widget=forms.Textarea(

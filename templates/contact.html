@@ -17,6 +17,9 @@
       <div class="form-field-wrapper">
         {{ field.label_tag }}
         {{ field }}
+        <div class="input-error">
+          {{ field.errors }}
+        </div>
       </div>
       {% endfor %}
       <input class="default-button" type="submit" value="Submit">
