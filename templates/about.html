@@ -8,16 +8,22 @@
 <div id="page-section">
   <div class="page-content">
     <div class="page-title"><h1>ABOUT</h1></div>
-    <p>Hi my name is Adam!  I'm a full-stack web developer.</p><br>
-    <p>I specialise in responsive front-end design and efficient back-end
-    solutions using Django.</p><br>
-    <p>A number of my previous commercial and personal projects can be viewed
-    under the 'projects' section of this website.</p><br>
-    <p>Each project comes with a direct link to the live website.</p><br>
-    <p>If you are interested in discussing your idea please follow the button
-    below and fill out the provided form.</p><br>
-    <p>Alternatively if you would like to contact me directly you can reach me
-    at the contact details below.</p>
+    <div id="about-content">
+      <img class="profile-image" src="/static/images/profile_image.jpg"
+           alt="Profile image of Adam Joyce">
+      <div id="about-description">
+        <p>Hi my name is Adam!  I'm a full-stack web developer.</p><br>
+        <p>I specialise in responsive front-end design and efficient back-end
+        solutions using Django.</p><br>
+        <p>A number of my previous commercial and personal projects can be viewed
+        under the 'projects' section of this website.</p><br>
+        <p>Each project comes with a direct link to the live website.</p><br>
+        <p>If you are interested in discussing your idea please follow the button
+        below and fill out the provided form.</p><br>
+        <p>Alternatively if you would like to contact me directly you can reach me
+        at the contact details below.</p>
+      </div>
+    </div>
   </div>
   <a href="{% url 'contact' %}">
     <button class="default-button addition-v-margin"

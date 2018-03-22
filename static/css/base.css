@@ -35,6 +35,12 @@ button:focus {
   margin: 4rem 0;
 }
 
+/* #page-section:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
 .typewrite {
   border-right: 0.08em solid #ee2b47;
 }
@@ -410,6 +416,15 @@ input[value="Submit"] {
 }
 
 /* About Page */
+
+.profile-image {
+  display: block;
+  border: 2px solid #f6f6f6;
+  border-radius: 50%;
+  margin: 2rem auto;
+  width: 15rem;
+}
+
 /* Contact */
 
 /*** End of Main Content ***/
@@ -517,10 +532,6 @@ input[value="Submit"] {
     font-size: 1.4rem;
   }
 
-  #profile-image {
-    width: 10rem;
-  }
-
   .nav-bar {
     display: none;
   }
@@ -545,6 +556,10 @@ input[value="Submit"] {
 
   .input-error {
     margin: 0;
+  }
+
+  .profile-image {
+    width: 9rem;
   }
 }
 
@@ -577,6 +592,16 @@ input[value="Submit"] {
       margin: 1rem 0;
     }
 
+    #about-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "description image";
+    }
+
+    #about-description {
+      grid-area: description;
+    }
+
     .project {
       height: 22rem;
       margin: 0;
@@ -585,6 +610,13 @@ input[value="Submit"] {
     .project-info-touch {
       justify-self: start;
       margin: 1rem 0;
+    }
+
+    .profile-image {
+      align-self: center;
+      grid-area: image;
+      justify-self: center;
+      margin: 0;
     }
 
     @media (min-width: 63.75em) {    /* 1020px */

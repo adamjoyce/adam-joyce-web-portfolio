@@ -101,7 +101,7 @@
   <div id="project-cases">
     {% for project in projects %}
     <a href=
-    "{% url 'project_page' project.financial_categories.slug project.slug%}">
+    "{% url 'project_page' project.financial_categories.slug project.slug %}">
       <div class="project"
            style="background-image: url('{{ project.get_logo }}')">
         {% if project.color %}
