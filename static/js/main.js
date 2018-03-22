@@ -32,28 +32,6 @@ window.onload = function() {
   // Overlay setup.
   Overlay.init();
 
-  // Fade out event.
-  // var pageLinks = document.getElementsByClassName('transition');
-  // var clickedLink;
-  // for (var i = 0; i < pageLinks.length; ++i) {
-  //   pageLinks[i].addEventListener('click', function(event) {
-  //     event.preventDefault();
-  //
-  //     if (event.target.tagName.toLowerCase() !== 'a') {
-  //       clickedLink = event.target.parentNode;
-  //     }
-  //     else {
-  //       clickedLink = event.target;
-  //     }
-  //
-  //     document.body.classList.add('transition-out');
-  //   });
-  // }
-  //
-  // document.body.addEventListener('transitionend', function() {
-  //   document.location.href = clickedLink.getAttribute('href');
-  // });
-
   // Filters for project pages.
   if (document.getElementById('collapsible-filters') !== null) {
     Filters.init();
@@ -66,28 +44,3 @@ window.onresize = function () {
     VerticalCentering.checkForOverlap();
   }
 };
-
-// window.onbeforeunload = function() {
-//   document.body.classList.add('transition-out');
-//   console.log(document.body.classList);
-// };
-
-// Fade out event.
-// var links = document.getElementsByTagName('a');
-// for (int i = 0; i < links.length; ++i) {
-//   links.addEventListener('click', function(e) {
-//     // Stop the new page loading immediately.
-//     e.preventDefault();
-//
-//     // Grab the new URL.
-//     var newURL = link[i].getAttribute('href');
-//     if (!newURL || newURL === '#') {
-//       // Link leads nowhere.
-//       document.location.href = '#';
-//       return;
-//     }
-//     else {
-//       document.location.href
-//     }
-//   });
-// }
