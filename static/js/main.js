@@ -71,3 +71,23 @@ window.onresize = function () {
 //   document.body.classList.add('transition-out');
 //   console.log(document.body.classList);
 // };
+
+// Fade out event.
+// var links = document.getElementsByTagName('a');
+// for (int i = 0; i < links.length; ++i) {
+//   links.addEventListener('click', function(e) {
+//     // Stop the new page loading immediately.
+//     e.preventDefault();
+//
+//     // Grab the new URL.
+//     var newURL = link[i].getAttribute('href');
+//     if (!newURL || newURL === '#') {
+//       // Link leads nowhere.
+//       document.location.href = '#';
+//       return;
+//     }
+//     else {
+//       document.location.href
+//     }
+//   });
+// }
