@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .forms import EmailForm
+from decouple import config, Csv
 
 def index(request):
     return render(request, 'index.html')
@@ -34,8 +35,8 @@ def contact(request):
             # Send the email.
             send_mail('Website Enquiry - ' + full_name,
                       text_content,
-                      'djangotest150@gmail.com',
-                      ['djangotest150@gmail.com'])
+                      config('EMAIL_HOST_USER', default=''),
+                      config('EMAIL_RECIPIENTS', cast=Csv()))
 
             # Redirect to thank you page.
             return HttpResponseRedirect(reverse('submitted'))
