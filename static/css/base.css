@@ -138,7 +138,7 @@ sup {
   margin: 2rem auto;
   margin-bottom: 1rem;
   text-align: right;
-  width: 32.75rem;
+  width: 40rem;
 }
 
 .form-field-wrapper {
@@ -157,7 +157,7 @@ sup {
   font-size: 0.9rem;
   margin-left: 1rem;
   padding: 0.2rem;
-  width: 21.875rem;
+  width: 29.125rem;
 }
 
 input[value="Submit"] {
@@ -167,7 +167,7 @@ input[value="Submit"] {
   border-right: 2px solid #b52036;
   border-top: 2px solid #ee2b47;
   border-radius: 0.25em;
-  width: 22.4rem;
+  width: 29.65rem;
 }
 
 .input-error {
@@ -541,9 +541,9 @@ input[value="Submit"] {
   }
 }
 
-@media (min-width: 75em) {    /* 1200px */
+@media (min-width: 78.0625em) {    /* 1249px */
   #page-container {
-    width: 1200px;
+    width: 75rem;
   }
 }
 
