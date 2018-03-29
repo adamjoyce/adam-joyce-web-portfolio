@@ -22,8 +22,13 @@ button:hover {
   cursor: pointer;
 }
 
-button:focus {
+a:focus, button:focus {
   outline: none;
+}
+
+sup {
+  font-size:xx-small;
+  vertical-align:super;
 }
 
 #page-container {
@@ -50,6 +55,7 @@ button:focus {
   border-right: 2px solid #b52036;
   border-top: 2px solid #ee2b47;
   border-radius: 0.25em;
+  display: inline-block;
   font-size: 1em;
   padding: 0.5em;
 }
@@ -294,13 +300,14 @@ input[value="Submit"] {
 
 #project-filters > button {
   background: #34374c;
+  color: #ee2b47;
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
   padding: 0;
 }
 
 #project-filters h1 {
   color: #ee2b47;
-  font-size: 1.6rem;
 }
 
 #collapsible-filters {
@@ -349,20 +356,20 @@ input[value="Submit"] {
   transition: opacity 0.2s linear;
 }
 
-.project-overlay:hover > span {
+.project-overlay:hover > div {
   bottom: 0;
   opacity: 1;
   transition: 1s ease-out 0.1s;
 }
 
-.project-overlay > span {
+.project-overlay > div {
   bottom: 15%;
   opacity: 0;
   padding: 1rem;
   position: absolute;
 }
 
-.project-overlay > span > hr {
+.project-overlay > div > hr {
   background: #f6f6f6;
   border: none;
   margin: 0.25rem 0;

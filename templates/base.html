@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block title %}<title>Adam Joyce Web Developer</title>{% endblock %}
+
+    <!-- Favicon -->
+    <link href="{% static 'images/favicon.jpg'%}" rel="shortcut icon">
 
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
@@ -41,7 +44,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{% url 'blog' %}">
                 <i class="fa fa-rss" aria-hidden="true"></i>
                 Blog
               </a></li>
@@ -71,7 +74,7 @@
               <i class="fa fa-code" aria-hidden="true"></i>
               Projects
             </a>
-            <a class="overlay-block nav-link" href="#">
+            <a class="overlay-block nav-link" href="{% url 'blog' %}">
               <i class="fa fa-rss" aria-hidden="true"></i>
               Blog
             </a>
@@ -96,7 +99,7 @@
       <div id="quick-links" class="underline">
         <ul>
           <li><a href="{% url 'projects_all' %}">Projects</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
@@ -126,10 +129,10 @@
     <!-- Scripts -->
     {% block scripts %}
     {% endblock %}
-    <script type="text/javascript" src="{% static 'js/filters.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/overlay.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/typewriter.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/vertical_centering.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/filters.js' %}"></script>
+    <script src="{% static 'js/overlay.js' %}"></script>
+    <script src="{% static 'js/typewriter.js' %}"></script>
+    <script src="{% static 'js/vertical_centering.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

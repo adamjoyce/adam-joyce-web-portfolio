@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
-<title>Projects - Adam Joyce Web Developer</title>
+<title>Projects | Adam Joyce Web Developer</title>
 {% endblock %}
 
 {% block page_content %}
@@ -11,7 +10,7 @@
   <!-- Project Filters -->
   <div id="project-filters">
     <button id="toggle-filters" type="button">
-      <h1>Filters  <i class="fa fa-angle-down" aria-hidden="true"></i></h1>
+      Filters  <i class="fa fa-angle-down" aria-hidden="true"></i>
     </button>
     <div id="collapsible-filters">
       <div id="measuring-wrapper">
@@ -109,14 +108,14 @@
         {% else %}
         <div class="project-overlay">
         {% endif %}
-          <span>
+          <div>
             {{ project.date.year }}
             <hr>
             {{ project.financial_categories.name }}<br>
             {% for cat in project.technology_categories.all %}
             {{ cat.name }}<br>
             {% endfor %}
-          </span>
+          </div>
         </div>
       </div>
       <div class="project-info-touch">

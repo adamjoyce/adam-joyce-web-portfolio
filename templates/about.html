@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}<title>About - Adam Joyce Web Developer</title>{% endblock %}
+{% block title %}<title>About | Adam Joyce Web Developer</title>{% endblock %}
 
 {% block page_content %}
 <div id="page-section">
@@ -25,12 +24,8 @@
       </div>
     </div>
   </div>
-  <a href="{% url 'contact' %}">
-    <button class="default-button addition-v-margin"
-            type="button"
-            name="button">
-      Build My Website
-    </button>
+  <a class="default-button addition-v-margin" href="{% url 'contact' %}">
+    Build My Website
   </a>
 </div>
 {% endblock %}
