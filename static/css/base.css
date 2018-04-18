@@ -137,27 +137,36 @@ sup {
 .input-form {
   margin: 2rem auto;
   margin-bottom: 1rem;
-  text-align: right;
   width: 40rem;
 }
 
 .form-field-wrapper {
   margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .input-form label {
-  vertical-align: top;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .input-form input, textarea {
+  display: block;
   background: #2c2e3e;
   border: 1px solid #f6f6f6;
+  border-radius: 2px;
+  box-sizing: border-box;
   color: #f6f6f6;
-  font-family: 'Asap', sans-serif;
+  font-family: sans-serif;
   font-size: 0.9rem;
-  margin-left: 1rem;
-  padding: 0.2rem;
-  width: 29.125rem;
+  height: 2.75rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.input-form textarea {
+  height: 10rem;
+  resize: vertical;
 }
 
 input[value="Submit"] {
@@ -167,13 +176,12 @@ input[value="Submit"] {
   border-right: 2px solid #b52036;
   border-top: 2px solid #ee2b47;
   border-radius: 0.25em;
-  width: 29.65rem;
+  width: 10rem;
 }
 
 .input-error {
   color: #ee2b47;
   font-size: 0.9rem;
-  margin-left: 10.5rem;
   text-align: left;
 }
 /*** End of Generic Elements ***/
@@ -403,7 +411,7 @@ input[value="Submit"] {
 }
 
 #project-image-ratio {
-  padding-top: 43.021%;
+  padding-top: /*43.021%;*/45.46875%;
 }
 
 /* About Page */
@@ -523,17 +531,11 @@ input[value="Submit"] {
   }
 
   .input-form {
-    text-align: left;
     width: 100%;
   }
 
   .input-form input, textarea {
-    margin: 0;
     width: 100%;
-  }
-
-  .input-error {
-    margin: 0;
   }
 
   .profile-image {
