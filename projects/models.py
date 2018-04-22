@@ -30,11 +30,13 @@ class Project(models.Model):
     technology_categories = models.ManyToManyField(TechnologyCategory)
     title = models.CharField(max_length=25, unique=True)
     date = models.DateTimeField(default=timezone.now)
-    summary = models.CharField(max_length=100, default='Project summary.',
+    summary = models.CharField(max_length=100,
+                               default='Project summary.',
                                help_text='A short summary of the project.')
     description = models.TextField()
     logo = models.ImageField(upload_to='projects/project_logos', blank=True)
-    color = models.TextField(blank=True,
+    color = models.CharField(max_length=7,
+                             blank=True,
                              help_text='Background color for project overlay.')
     link = models.URLField()
     image = models.ImageField(upload_to='projects/project_images', blank=True,
